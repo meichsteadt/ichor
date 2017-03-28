@@ -1,0 +1,14 @@
+{
+  "members": [
+    {
+      "name": "Matt",
+      "text": "some extra text and such",
+      "photo": "https://images.unsplash.com/photo-1489289827069-adf270f4f417?dpr=1&auto=compress,format&fit=crop&w=400&h=400&q=80&cs=tinysrgb&crop="
+    },
+    {
+      "name": "Matt",
+      "text": "some extra text and such",
+      "photo": "https://images.unsplash.com/photo-1489289827069-adf270f4f417?dpr=1&auto=compress,format&fit=crop&w=400&h=400&q=80&cs=tinysrgb&crop="
+    }
+  ]
+}
