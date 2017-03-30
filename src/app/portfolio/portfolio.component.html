@@ -1,0 +1,8 @@
+<div *ngIf="currentRoute !== '/admin'">
+  <div class="portfolioItem" *ngFor="let item of portfolioItems | async">
+    <h4>{{item.client}}</h4>
+    <p>{{item.description}}</p>
+    <img src="{{item.photo}}" alt="{{item.client}}" style="width:400px;height:400px;">
+    <p>{{item.review}}</p>
+  </div>
+</div>

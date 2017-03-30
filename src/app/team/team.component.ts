@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TeamMember } from '../team-member.model';
+import { Router } from '@angular/router';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
@@ -8,13 +8,14 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
   styleUrls: ['./team.component.css']
 })
 export class TeamComponent implements OnInit {
+  members: FirebaseListObservable<any[]>;
 
-  team: FirebaseListObservable<any[]>;
-  constructor(private angularFire: AngularFire) {
-    this.team = angularFire.database.list('members');
+  currentRoute: string = this.router.url
+  constructor(private angularFire: AngularFire, private router: Router) {
+    this.members = angularFire.database.list('members');
   }
   ngOnInit() {
-    
+
   }
 
 }

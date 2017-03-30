@@ -1,8 +1,5 @@
-<p>
-  team works!
-</p>
-<div class="member" *ngFor="let member of team | async">
+<div id="{{member.name | lowercase}}" class="member" *ngFor="let member of members | async">
   <h4>{{member.name}}</h4>
   <p>{{member.text}}</p>
-  <img src="{{member.photo}}" alt="">
+  <img src="{{member.photo}}" alt="{{member.name}}">
 </div>

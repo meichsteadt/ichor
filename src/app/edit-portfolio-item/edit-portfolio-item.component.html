@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-md-3">
+    <ul class="nav nav-pills">
+      <li [class.active]="activeItem(blankItem)" (click)="setItem(blankItem)" (click)="setAction('new')" role="presentation"><a>New Portfolio Item</a></li>
+    </ul>
+    <ul *ngFor="let item of portfolioItems | async" class="nav nav-pills">
+      <li [class.active]="activeItem(item)" (click)="setItem(item)" (click)="setAction('update')" role="presentation"><a>{{item.client}}</a></li>
+    </ul>
+  </div>
+  <div *ngIf="currentItem">
+    <div class="col-md-9" style="border-left: 1px solid #ccc; min-height:100vh;">
+      <h1 class="text-center">{{currentAction}} Portfolio Item</h1>
+      <hr>
+      <div id="portfolioForm" class="form col-md-6">
+        <br>
+        <div class="form-group">
+          <label>Client</label>
+          <input [(ngModel)]="currentItem.client" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Review</label>
+          <textarea [(ngModel)]="currentItem.review" rows="8" cols="80" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea [(ngModel)]="currentItem.description" rows="8" cols="80" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Photo URL</label>
+          <input [(ngModel)]="currentItem.photo" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Webiste URL</label>
+          <input [(ngModel)]="currentItem.url" type="text" class="form-control">
+        </div>
+        <div *ngIf="currentAction === 'update'">
+          <button class="btn btn-info" (click)="updateItem(currentItem)">Update</button>
+          <button class="btn btn-danger" (click)="deleteItem(currentItem)">Delete</button>
+        </div>
+        <div *ngIf="currentAction === 'new'">
+          <button class="btn-default btn" (click)="newItem(currentItem)">Add</button>
+        </div>
+      </div>
+      <div id="portfolioItem" class="col-md-6">
+        <h4>{{currentItem.client}}</h4>
+        <p>{{currentItem.description}}</p>
+        <img src="{{currentItem.photo}}" alt="{{currentItem.client}}" style="max-width:400px;max-height:400px;">
+        <p>{{currentItem.review}}</p>
+      </div>
+    </div>
+  </div>
+</div>

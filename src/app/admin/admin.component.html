@@ -1,0 +1,14 @@
+<ul class="nav nav-tabs">
+  <li [class.active]="activeSection('team')" role="presentation" (click)="currentSection = 'team'"><a>Team</a></li>
+  <li [class.active]="activeSection('portfolio')" role="presentation" (click)="currentSection = 'portfolio'"><a>Portfolio</a></li>
+</ul>
+<div *ngIf="currentSection === 'team'" id="team">
+  <div class="row">
+    <app-edit-member></app-edit-member>
+  </div>
+</div>
+<div *ngIf="currentSection === 'portfolio'" id="portfolio">
+  <div class="row">
+    <app-edit-portfolio-item></app-edit-portfolio-item>
+  </div>
+</div>

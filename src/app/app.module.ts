@@ -10,6 +10,10 @@ import { AboutComponent } from './about/about.component';
 import { routing } from './app.routing';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule, FirebaseListObservable } from 'angularfire2';
+import { AdminComponent } from './admin/admin.component';
+import { EditMemberComponent } from './edit-member/edit-member.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
+import { EditPortfolioItemComponent } from './edit-portfolio-item/edit-portfolio-item.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -22,7 +26,11 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     TeamComponent,
-    AboutComponent
+    AboutComponent,
+    AdminComponent,
+    EditMemberComponent,
+    PortfolioComponent,
+    EditPortfolioItemComponent
   ],
   imports: [
     BrowserModule,
