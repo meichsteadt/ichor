@@ -2,5 +2,7 @@
   <a routerLink="/about" routerLinkActive="active">About</a>
   <a routerLink="/admin" routerLinkActive="active">Admin</a>
   <a routerLink="/portfolio" routerLinkActive="active">Portfolio</a>
-  <router-outlet></router-outlet>  
+  <a (click)=authService.login() *ngIf="!authService.loggedIn()">Log In</a>
+  <a (click)=authService.logout() *ngIf="authService.loggedIn()">Log Out</a>
+  <router-outlet></router-outlet>
 </div>

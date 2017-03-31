@@ -1,9 +1,10 @@
 import { ModuleWithProviders } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, CanActivate } from '@angular/router';
 import { AboutComponent} from './about/about.component';
 import { TeamComponent} from './team/team.component';
 import { AdminComponent } from './admin/admin.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { AuthGuardService } from './auth-guard.service';
 
 const appRoutes: Routes = [
   {
@@ -12,7 +13,8 @@ const appRoutes: Routes = [
   },
   {
     path: 'admin',
-    component: AdminComponent
+    component: AdminComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'portfolio',

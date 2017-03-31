@@ -14,6 +14,8 @@ import { AdminComponent } from './admin/admin.component';
 import { EditMemberComponent } from './edit-member/edit-member.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { EditPortfolioItemComponent } from './edit-portfolio-item/edit-portfolio-item.component';
+import { AuthGuardService } from './auth-guard.service';
+import { AuthService } from './auth.service';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -39,7 +41,7 @@ export const firebaseConfig = {
     routing,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [],
+  providers: [AuthGuardService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
