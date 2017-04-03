@@ -1,8 +1,9 @@
 <div class="container">
   <a routerLink="/about" routerLinkActive="active">About</a>
-  <a routerLink="/admin" routerLinkActive="active">Admin</a>
   <a routerLink="/portfolio" routerLinkActive="active">Portfolio</a>
-  <a (click)=authService.login() *ngIf="!authService.loggedIn()">Log In</a>
-  <a (click)=authService.logout() *ngIf="authService.loggedIn()">Log Out</a>
+  <span *ngIf="adminRoute()">
+    <a (click)=authService.login() *ngIf="!authService.loggedIn()">Log In</a>
+    <a (click)=authService.logout() *ngIf="authService.loggedIn()">Log Out</a>
+  </span>
   <router-outlet></router-outlet>
 </div>

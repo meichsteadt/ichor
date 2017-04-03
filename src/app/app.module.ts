@@ -9,19 +9,25 @@ import { TeamComponent } from './team/team.component';
 import { AboutComponent } from './about/about.component';
 import { routing } from './app.routing';
 import { masterFirebaseConfig } from './api-keys';
-import { AngularFireModule, FirebaseListObservable } from 'angularfire2';
+import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 import { AdminComponent } from './admin/admin.component';
 import { EditMemberComponent } from './edit-member/edit-member.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { EditPortfolioItemComponent } from './edit-portfolio-item/edit-portfolio-item.component';
 import { AuthGuardService } from './auth-guard.service';
 import { AuthService } from './auth.service';
+import { LoginComponent } from './login/login.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
   authDomain: masterFirebaseConfig.authDomain,
   databaseURL: masterFirebaseConfig.databaseURL,
   storageBucket: masterFirebaseConfig.storageBucket
+};
+
+const firebaseAuthConfig = {
+  provider: AuthProviders.Password,
+  method: AuthMethods.Password
 };
 
 @NgModule({
@@ -32,14 +38,15 @@ export const firebaseConfig = {
     AdminComponent,
     EditMemberComponent,
     PortfolioComponent,
-    EditPortfolioItemComponent
+    EditPortfolioItemComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     routing,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig)
   ],
   providers: [AuthGuardService, AuthService],
   bootstrap: [AppComponent]

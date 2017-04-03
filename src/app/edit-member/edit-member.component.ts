@@ -11,13 +11,18 @@ export class EditMemberComponent implements OnInit {
   members: FirebaseListObservable<any[]>;
   blankMember: TeamMember = new TeamMember('','','');
   currentMember: TeamMember = this.blankMember;
-  currentAction: string;
+  currentAction: string = 'new';
 
   constructor(private angularFire: AngularFire) {
     this.members = angularFire.database.list('members');
   }
 
   ngOnInit() {
+  }
+
+  resetMember() {
+    this.blankMember = new TeamMember('','','');
+    this.currentMember = this.blankMember;
   }
 
   setMember(member) {
@@ -34,7 +39,7 @@ export class EditMemberComponent implements OnInit {
 
   newMember(item) {
     this.members.push(item);
-    this.currentAction = 'update';
+    this.resetMember();
   }
 
   updateMember(memberToUpdate) {
@@ -50,6 +55,8 @@ export class EditMemberComponent implements OnInit {
     var memberInFirebase = this.getMemberByID(memberToDelete.$key);
     if(confirm("Are you sure you want to delete this member?")) {
       memberInFirebase.remove();
+      this.resetMember();
+      this.setAction('new');
     }
   }
 

@@ -11,7 +11,7 @@ export class EditPortfolioItemComponent implements OnInit {
   portfolioItems: FirebaseListObservable<any[]>;
   blankItem: PortfolioItem = new PortfolioItem('','','','','');
   currentItem: PortfolioItem = this.blankItem;
-  currentAction: string;
+  currentAction: string = 'new';
 
   setItem(item) {
     this.currentItem = item;

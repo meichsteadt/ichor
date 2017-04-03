@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from './auth.service';
 import { AuthGuardService } from './auth-guard.service';
 
@@ -11,6 +12,13 @@ import { AuthGuardService } from './auth-guard.service';
 export class AppComponent {
   title = 'app works!';
 
-  constructor(private authService: AuthService) { }
-
+  constructor(private authService: AuthService, private router: Router) { }
+  adminRoute() {
+    if(this.router.url === '/admin') {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
 }
