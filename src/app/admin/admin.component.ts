@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
-
+import { firebaseAuthConfig } from '../api-keys';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -16,8 +16,8 @@ export class AdminComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.angularFire.auth.login({ email: 'jqian@ichorstudios.com', password: 'LiloMomo12'});
-    // this.angularFire.auth.logout();
+    console.log(this.angularFire.auth)
+    this.angularFire.auth.login({ email: firebaseAuthConfig.email, password: firebaseAuthConfig.password});
    }
   activeSection(section) {
     if(this.currentSection === section) {
