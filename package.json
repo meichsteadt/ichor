@@ -26,6 +26,7 @@
     "auth0-lock": "^10.14.0",
     "core-js": "^2.4.1",
     "firebase": "^3.7.4",
+    "ng2-file-upload": "^1.2.0",
     "rxjs": "^5.0.1",
     "ts-helpers": "^1.1.1",
     "zone.js": "^0.7.2"

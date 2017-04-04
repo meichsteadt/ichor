@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
 import { PortfolioItem } from '../portfolio-item.model';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFire, FirebaseListObservable, FirebaseApp } from 'angularfire2';
 
 @Component({
   selector: 'app-edit-portfolio-item',
@@ -9,9 +9,24 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 })
 export class EditPortfolioItemComponent implements OnInit {
   portfolioItems: FirebaseListObservable<any[]>;
+  photos: FirebaseListObservable<any[]>;
   blankItem: PortfolioItem = new PortfolioItem('','','','','');
   currentItem: PortfolioItem = this.blankItem;
   currentAction: string = 'new';
+  currentPhoto;
+  currentFile;
+  firebaseRef;
+
+  constructor(private angularFire: AngularFire, @Inject(FirebaseApp) firebaseApp: any) {
+    this.portfolioItems = angularFire.database.list('portfolio');
+    this.photos = angularFire.database.list('images/portfolio');
+    this.firebaseRef = firebaseApp.storage().ref();
+  }
+
+  onChange(event) {
+    var files = event.srcElement.files;
+    this.currentFile = files[0];
+  }
 
   setItem(item) {
     this.currentItem = item;
@@ -20,9 +35,16 @@ export class EditPortfolioItemComponent implements OnInit {
   setAction(action){
     this.currentAction = action;
   }
-  constructor(private angularFire: AngularFire) {
-    this.portfolioItems = angularFire.database.list('portfolio');
+
+  setPhoto(photo) {
+    this.currentPhoto = photo.url;
   }
+
+  resetItem() {
+    this.blankItem = new PortfolioItem('','','','','');
+    this.currentItem = this.blankItem;
+  }
+
 
   ngOnInit() {
   }
@@ -33,7 +55,8 @@ export class EditPortfolioItemComponent implements OnInit {
 
   newItem(item) {
     this.portfolioItems.push(item);
-    this.currentAction = 'update';
+    this.currentAction = 'new';
+    this.resetItem();
   }
 
   updateItem(itemToUpdate) {
@@ -51,7 +74,7 @@ export class EditPortfolioItemComponent implements OnInit {
     var itemInFirebase = this.getItemByID(itemToDelete.$key);
     if(confirm("Are you sure you want to delete this item?")) {
       itemInFirebase.remove();
-      this.currentItem = this.portfolioItems[0]
+      this.resetItem();
     }
   }
 
@@ -62,6 +85,30 @@ export class EditPortfolioItemComponent implements OnInit {
     else {
       return false;
     }
+  }
+
+  activePhoto(photo) {
+    if(photo.url === this.currentPhoto) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
+  uploadFile() {
+    let url;
+    if(this.currentFile) {
+      let name = this.currentFile.name;
+      this.firebaseRef.child(name).put(this.currentFile)
+      .then(a => this.firebaseRef.child(name).getDownloadURL()
+        .then(url => this.angularFire.database.list('images/portfolio').push({ url: url, name: name}))
+      )
+    }
+  }
+
+  selectPhoto() {
+    this.currentItem.photo = this.currentPhoto;
   }
 
 }

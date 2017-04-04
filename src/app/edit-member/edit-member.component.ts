@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
 import { TeamMember } from '../team-member.model';
-import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
+import { AngularFire, FirebaseListObservable, FirebaseObjectObservable, FirebaseApp } from 'angularfire2';
 
 @Component({
   selector: 'app-edit-member',
@@ -9,15 +9,27 @@ import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'a
 })
 export class EditMemberComponent implements OnInit {
   members: FirebaseListObservable<any[]>;
+  photos: FirebaseListObservable<any[]>;
   blankMember: TeamMember = new TeamMember('','','');
   currentMember: TeamMember = this.blankMember;
   currentAction: string = 'new';
+  currentPhoto;
+  currentFile;
+  firebaseRef;
 
-  constructor(private angularFire: AngularFire) {
+  constructor(private angularFire: AngularFire, @Inject(FirebaseApp) firebaseApp: any) {
     this.members = angularFire.database.list('members');
+    this.photos = angularFire.database.list('images/members')
+    this.firebaseRef = firebaseApp.storage().ref();
+  }
+
+  onChange(event) {
+    var files = event.srcElement.files;
+    this.currentFile = files[0];
   }
 
   ngOnInit() {
+
   }
 
   resetMember() {
@@ -27,10 +39,15 @@ export class EditMemberComponent implements OnInit {
 
   setMember(member) {
     this.currentMember = member;
+    this.currentPhoto = member.photo;
   }
 
   setAction(action) {
     this.currentAction = action;
+  }
+
+  setPhoto(photo) {
+    this.currentPhoto = photo.url;
   }
 
   getMemberByID(id: string) {
@@ -43,7 +60,7 @@ export class EditMemberComponent implements OnInit {
   }
 
   updateMember(memberToUpdate) {
-    var memberInFirebase = this.getMemberByID(memberToUpdate.$key);
+    let memberInFirebase = this.getMemberByID(memberToUpdate.$key);
     memberInFirebase.update({
       name: memberToUpdate.name,
       text: memberToUpdate.text,
@@ -69,4 +86,27 @@ export class EditMemberComponent implements OnInit {
     }
   }
 
+  activePhoto(photo) {
+    if(photo.url === this.currentPhoto) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
+  uploadFile() {
+    let url;
+    if(this.currentFile) {
+      let name = this.currentFile.name;
+      this.firebaseRef.child(name).put(this.currentFile)
+      .then(a => this.firebaseRef.child(name).getDownloadURL()
+        .then(url => this.angularFire.database.list('images/members').push({ url: url, name: name}))
+      )
+    }
+  }
+
+  selectPhoto() {
+    this.currentMember.photo = this.currentPhoto;
+  }
 }

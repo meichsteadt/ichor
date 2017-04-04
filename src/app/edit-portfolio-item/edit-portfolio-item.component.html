@@ -27,7 +27,8 @@
         </div>
         <div class="form-group">
           <label>Photo URL</label>
-          <input [(ngModel)]="currentItem.photo" type="text" class="form-control">
+          <button class="btn btn-default" style="margin-bottom: 10px;" data-toggle="modal" data-target="#photoModal">Edit Photo</button>
+          <input [(ngModel)]="currentItem.photo" type="text" class="form-control" disabled>
         </div>
         <div class="form-group">
           <label>Webiste URL</label>
@@ -46,6 +47,29 @@
         <p>{{currentItem.description}}</p>
         <img src="{{currentItem.photo}}" alt="{{currentItem.client}}" style="max-width:400px;max-height:400px;">
         <p>{{currentItem.review}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="photoModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Portfolio Photo</h4>
+      </div>
+      <div class="modal-body">
+          <img *ngFor="let photo of photos | async" src="{{photo.url}}" alt="{{photo.name}}" class="editPhoto" [class.currentPhoto]="activePhoto(photo)" (click)="setPhoto(photo)">
+        <div class="form-group">
+          <label>Upload photo</label>
+          <input type="file" (change)="onChange($event)" id="file">
+        </div>
+        <button class="btn btn-success" (click)="uploadFile()">Upload Photo</button>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-info" data-dismiss="modal" (click)="selectPhoto()">Select Photo</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
