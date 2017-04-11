@@ -17,6 +17,11 @@ import { EditPortfolioItemComponent } from './edit-portfolio-item/edit-portfolio
 import { AuthGuardService } from './auth-guard.service';
 import { AuthService } from './auth.service';
 import { LoginComponent } from './login/login.component';
+import { EmailComponent } from './email/email.component';
+import { BlogComponent } from './blog/blog.component';
+import { BlogSingleComponent } from './blog-single/blog-single.component';
+import { EditBlogComponent } from './edit-blog/edit-blog.component';
+import { MarkdownModule } from 'angular2-markdown';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -39,14 +44,19 @@ const firebaseAuthConfig = {
     EditMemberComponent,
     PortfolioComponent,
     EditPortfolioItemComponent,
-    LoginComponent
+    LoginComponent,
+    EmailComponent,
+    BlogComponent,
+    BlogSingleComponent,
+    EditBlogComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     routing,
-    AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig)
+    AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
+    MarkdownModule.forRoot()
   ],
   providers: [AuthGuardService, AuthService],
   bootstrap: [AppComponent]

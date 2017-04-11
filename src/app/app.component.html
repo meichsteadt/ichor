@@ -3,6 +3,7 @@
   |
   <a routerLink="/portfolio" routerLinkActive="active">Portfolio</a>
   |
+  <a routerLink="/blog" routerLinkActive="active">Blog</a>
   <span *ngIf="adminRoute()">
     <a (click)=authService.login() *ngIf="!authService.loggedIn()">Log In</a>
     <a (click)=authService.logout() *ngIf="authService.loggedIn()">Log Out</a>

@@ -10,15 +10,15 @@ import { firebaseAuthConfig } from '../api-keys';
 })
 export class AdminComponent implements OnInit {
   currentRoute: string = this.router.url
-  currentSection: string = "team";
+  currentSection: string = "blog";
   constructor(private router: Router, private angularFire: AngularFire) {
     this.angularFire.auth.subscribe();
   }
 
   ngOnInit() {
-    console.log(this.angularFire.auth)
     this.angularFire.auth.login({ email: firebaseAuthConfig.email, password: firebaseAuthConfig.password});
    }
+
   activeSection(section) {
     if(this.currentSection === section) {
       return true;

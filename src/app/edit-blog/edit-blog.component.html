@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col-md-3">
+    <ul class="nav nav-pills">
+      <li [class.active]="activePost(blankPost)" (click)="setPost(blankPost)" (click)="setAction('new')" role="presentation"><a>New Post</a></li>
+    </ul>
+    <ul *ngFor="let post of blogPosts | async" class="nav nav-pills">
+      <li [class.active]="activePost(post)" (click)="setPost(post)" (click)="setAction('update')" role="presentation"><a>{{post.title}}</a></li>
+    </ul>
+  </div>
+  <div *ngIf="currentPost">
+    <div class="col-md-9" style="border-left: 1px solid #ccc; min-height:100vh;">
+      <h1 class="text-center">{{currentAction}} Blog Post</h1>
+      <hr>
+        <br>
+        <div class="form-group">
+          <label>Title</label>
+          <input [(ngModel)]="currentPost.title" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Text</label>
+          <textarea [(ngModel)]="currentPost.content" rows="8" cols="80" class="form-control"></textarea>
+        </div>
+        <markdown [data]="currentPost.content"></markdown>
+        <div class="form-group">
+          <label>Image URL</label>
+          <button class="btn btn-default" style="margin-bottom: 10px;" data-toggle="modal" data-target="#imageModal">Edit Image</button>
+          <input [(ngModel)]="currentPost.image" type="text" class="form-control" disabled>
+        </div>
+        <div *ngIf="currentAction === 'update'">
+          <button class="btn btn-info" (click)="updatePost(currentPost)">Update</button>
+          <button class="btn btn-danger" (click)="deletePost(currentPost)">Delete</button>
+        </div>
+        <div *ngIf="currentAction === 'new'">
+          <button class="btn-default btn" (click)="newPost(currentPost)">Add</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div id="imageModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Post Image</h4>
+      </div>
+      <div class="modal-body">
+          <img *ngFor="let image of images | async" src="{{image.url}}" alt="{{image.name}}" class="editPhoto" [class.currentPhoto]="activeImage(image)" (click)="setImage(image)">
+        <div class="form-group">
+          <label>Upload image</label>
+          <input type="file" (change)="onChange($event)" id="file">
+        </div>
+        <button class="btn btn-success" (click)="uploadFile()">Upload Image</button>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-info" data-dismiss="modal" (click)="selectImage()">Select Image</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

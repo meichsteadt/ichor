@@ -24,3 +24,25 @@ ul.nav {
 a:hover {
   cursor: pointer;
 }
+
+.email {
+  margin: 100px;
+}
+
+.posts {
+  width: 66%;
+}
+
+.categories {
+  width: 33%;
+  float: right;
+  height: 400px;
+  padding: 20px;
+}
+
+.post {
+  width: 50%;
+  height: 400px;
+  padding: 15px;
+  float: left;
+}

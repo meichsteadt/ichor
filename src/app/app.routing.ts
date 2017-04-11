@@ -5,6 +5,8 @@ import { TeamComponent} from './team/team.component';
 import { AdminComponent } from './admin/admin.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { LoginComponent } from './login/login.component';
+import { BlogComponent } from './blog/blog.component';
+import { BlogSingleComponent } from './blog-single/blog-single.component';
 import { AuthGuardService } from './auth-guard.service';
 
 const appRoutes: Routes = [
@@ -24,6 +26,14 @@ const appRoutes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'blog',
+    component: BlogComponent
+  },
+  {
+    path: 'blog/:id',
+    component: BlogSingleComponent
   }
 ]
 

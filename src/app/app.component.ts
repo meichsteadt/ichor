@@ -11,7 +11,6 @@ import { AuthGuardService } from './auth-guard.service';
 })
 export class AppComponent {
   title = 'app works!';
-
   constructor(private authService: AuthService, private router: Router) { }
   adminRoute() {
     if(this.router.url === '/admin') {

@@ -1,0 +1,115 @@
+{
+  "blog" : {
+    "categories" : {
+      "ichor" : "Ichor",
+      "web" : "Web"
+    },
+    "posts" : [ {
+      "categories" : {
+        "ichor" : "Ichor",
+        "web" : "Web"
+      },
+      "content" : "Occupy kitsch plaid cornhole tattooed sartorial four dollar toast pour-over. Irony tilde retro, messenger bag hammock gluten-free seitan +1 intelligentsia literally. Chicharrones ramps forage, vegan tousled wayfarers franzen. Biodiesel heirloom migas umami cold-pressed, knausgaard vinyl marfa affogato iPhone 3 wolf moon waistcoat. Tofu marfa cliche synth gochujang, knausgaard chartreuse. Cardigan cornhole irony, plaid bitters XOXO keffiyeh. Microdosing pop-up 3 wolf moon crucifix sriracha.",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/ichor-dea55.appspot.com/o/kzc9h88nwpm-dominik-wycislo.jpg?alt=media&token=161a0abc-e558-47df-95b2-9f5a6d75be73",
+      "title" : "Hipster"
+    },
+    {
+      "categories" : {
+        "ichor" : "Ichor",
+        "web" : "Web"
+      },
+      "content" : "Occupy kitsch plaid cornhole tattooed sartorial four dollar toast pour-over. Irony tilde retro, messenger bag hammock gluten-free seitan +1 intelligentsia literally. Chicharrones ramps forage, vegan tousled wayfarers franzen. Biodiesel heirloom migas umami cold-pressed, knausgaard vinyl marfa affogato iPhone 3 wolf moon waistcoat. Tofu marfa cliche synth gochujang, knausgaard chartreuse. Cardigan cornhole irony, plaid bitters XOXO keffiyeh. Microdosing pop-up 3 wolf moon crucifix sriracha.",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/ichor-dea55.appspot.com/o/kzc9h88nwpm-dominik-wycislo.jpg?alt=media&token=161a0abc-e558-47df-95b2-9f5a6d75be73",
+      "title" : "Hipster"
+    } ]
+  },
+  "images" : {
+    "members" : {
+      "-KgqRMNTU0EqC_d4_RWB" : {
+        "name" : "IMG_6355.JPG",
+        "url" : "https://firebasestorage.googleapis.com/v0/b/ichor-dea55.appspot.com/o/IMG_6355.JPG?alt=media&token=29066daf-c621-4cd1-a245-5bcb3828434d"
+      },
+      "-KgqXWw0DLw_vZNqHGRc" : {
+        "name" : "matt.jpg",
+        "url" : "https://firebasestorage.googleapis.com/v0/b/ichor-dea55.appspot.com/o/matt.jpg?alt=media&token=8b627c89-3069-4a91-8e3f-079763cc9795"
+      }
+    },
+    "portfolio" : {
+      "-KgqTZuhJo6ZIcBXxw5G" : {
+        "name" : "IMG_6330.JPG",
+        "url" : "https://firebasestorage.googleapis.com/v0/b/ichor-dea55.appspot.com/o/IMG_6330.JPG?alt=media&token=b033ef24-b676-4121-a6cc-6d9bc2a40630"
+      },
+      "-KgzgMXTXarGFt-_i_n4" : {
+        "name" : "shutterstock_388253872.jpg",
+        "url" : "https://firebasestorage.googleapis.com/v0/b/ichor-dea55.appspot.com/o/shutterstock_388253872.jpg?alt=media&token=3e423a1c-4301-48b3-bed8-7ebb0b46a115"
+      },
+      "-Kgzgb9dK7h-YiXKpNIt" : {
+        "name" : "shutterstock_388253872.jpg",
+        "url" : "https://firebasestorage.googleapis.com/v0/b/ichor-dea55.appspot.com/o/shutterstock_388253872.jpg?alt=media&token=e8d07869-31d7-4bff-8840-bfea3534ac6c"
+      },
+      "-KgzgsDCt4dvGkZ3JZl8" : {
+        "name" : "shutterstock_388253872.jpg",
+        "url" : "https://firebasestorage.googleapis.com/v0/b/ichor-dea55.appspot.com/o/shutterstock_388253872.jpg?alt=media&token=01958a50-5816-4349-8352-123082c76656"
+      },
+      "-Kgzh6sYJzSVCLdzyvAG" : {
+        "name" : "shutterstock_388253872.jpg",
+        "url" : "https://firebasestorage.googleapis.com/v0/b/ichor-dea55.appspot.com/o/shutterstock_388253872.jpg?alt=media&token=67f5ef27-9180-40e5-8d8c-8d09d6ced97a"
+      },
+      "-KgzhArUyxzY_Zg54WSH" : {
+        "name" : "kzc9h88nwpm-dominik-wycislo.jpg",
+        "url" : "https://firebasestorage.googleapis.com/v0/b/ichor-dea55.appspot.com/o/kzc9h88nwpm-dominik-wycislo.jpg?alt=media&token=161a0abc-e558-47df-95b2-9f5a6d75be73"
+      }
+    }
+  },
+  "members" : {
+    "0" : {
+      "name" : "Matt",
+      "photo" : "https://firebasestorage.googleapis.com/v0/b/ichor-dea55.appspot.com/o/matt.jpg?alt=media&token=8b627c89-3069-4a91-8e3f-079763cc9795",
+      "text" : "some extra text and such."
+    },
+    "-KgRu-aQDCpO8_dMIWm9" : {
+      "name" : "Jennifer",
+      "photo" : "http://ichorstudios.com/assets/img/jennifer.png",
+      "text" : "Jennifer founded Ichor Studios in 2014, following a passion, to help small businesses and non-profits in her community. She has a background in business and an eye for technology."
+    }
+  },
+  "portfolio" : {
+    "0" : {
+      "client" : "Downtown Barrel Room",
+      "description" : "We're very excited to currently be working on a website for Uptown Barrel Room. We have completed stage one! Check back soon for the stage two finished product.",
+      "photo" : "http://ichorstudios.com/assets/img/ubr.jpg",
+      "photoOpen" : "http://ichorstudios.com/assets/img/ubropen.jpg",
+      "review" : "Where can I start, Jennifer and Sarah Joy from Ichor were great to work with from start to finish. They delivered our website as promised: the back end functionality worked well as we uploaded our menus same day we had a final product, the simple yet elegant design is exactly what we wanted and our customers responded by offering immediate feedback. We had a couple simple glitches that Ichor fixed immediately! I highly recommend anyone seeking to modify an existing website or starting from scratch - these ladies take their jobs seriously and will get it done as promised! They are creative, fun to work with but most of all delivered what was discussed. While we only accomplished stage 1 of 3, I think it's important to note that Ichor did not overpromise their product and is allowing our business to see immediate results at a very fair price, allowing us to grow our website as our business grows. I look forward to our continued business relationship. Thank you Ichor!!! -John Kendall.",
+      "url" : "http://www.uptownbarrelroom.com/"
+    },
+    "1" : {
+      "client" : "Uptown Barrel Rooommmmm",
+      "description" : "We're very excited to currently be working on a website for Uptown Barrel Room. We have completed stage one! Check back soon for the stage two finished product.",
+      "photo" : "http://ichorstudios.com/assets/img/ubr.jpg",
+      "photoOpen" : "http://ichorstudios.com/assets/img/ubropen.jpg",
+      "review" : "Where can I start, Jennifer and Sarah Joy from Ichor were great to work with from start to finish. They delivered our website as promised: the back end functionality worked well as we uploaded our menus same day we had a final product, the simple yet elegant design is exactly what we wanted and our customers responded by offering immediate feedback. We had a couple simple glitches that Ichor fixed immediately! I highly recommend anyone seeking to modify an existing website or starting from scratch - these ladies take their jobs seriously and will get it done as promised! They are creative, fun to work with but most of all delivered what was discussed. While we only accomplished stage 1 of 3, I think it's important to note that Ichor did not overpromise their product and is allowing our business to see immediate results at a very fair price, allowing us to grow our website as our business grows. I look forward to our continued business relationship. Thank you Ichor!!! -John Kendall.",
+      "url" : "http://www.uptownbarrelroom.com/"
+    },
+    "-KgpWOvNprZjB6RBbKgv" : {
+      "client" : "Client",
+      "description" : "",
+      "photo" : "https://firebasestorage.googleapis.com/v0/b/ichor-dea55.appspot.com/o/IMG_6330.JPG?alt=media&token=b033ef24-b676-4121-a6cc-6d9bc2a40630",
+      "review" : "Stuff",
+      "url" : ""
+    },
+    "-Kgzgl0q4kgx8nxCVbSF" : {
+      "client" : "Another one",
+      "description" : "",
+      "photo" : "https://firebasestorage.googleapis.com/v0/b/ichor-dea55.appspot.com/o/shutterstock_388253872.jpg?alt=media&token=3e423a1c-4301-48b3-bed8-7ebb0b46a115",
+      "review" : "Review stuff",
+      "url" : ""
+    },
+    "-KgzhDl8wXFJopF1qn_e" : {
+      "client" : "CLient2",
+      "description" : "",
+      "photo" : "https://firebasestorage.googleapis.com/v0/b/ichor-dea55.appspot.com/o/kzc9h88nwpm-dominik-wycislo.jpg?alt=media&token=161a0abc-e558-47df-95b2-9f5a6d75be73",
+      "review" : "Review",
+      "url" : ""
+    }
+  }
+}

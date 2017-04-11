@@ -19,7 +19,8 @@
       "mobile": false,
       "styles": [
         "styles.css",
-        "../bower_components/bootstrap/dist/css/bootstrap.css"
+        "../bower_components/bootstrap/dist/css/bootstrap.css",
+        "../node_modules/prismjs/themes/prism-okaidia.css"
       ],
       "scripts": [],
       "environments": {

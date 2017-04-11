@@ -1,0 +1,38 @@
+.post {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.image {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+}
+
+.image img{
+  width: 100%;
+  height: 100%;
+  filter: brightness(120%);
+}
+
+.title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header {
+  height: 100vh;
+}
+
+.content {
+  width: 80%;
+  padding-top: 25px;
+  margin: 0 auto;
+}
+
+#markdown p{
+  text-align: center;
+}

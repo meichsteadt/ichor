@@ -10,6 +10,7 @@
 .bg-square {
   width: 40%;
   height: 100vh;
+  float: right;
 }
 
 .sm-square {

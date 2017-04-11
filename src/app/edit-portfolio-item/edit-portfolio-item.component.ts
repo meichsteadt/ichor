@@ -30,6 +30,7 @@ export class EditPortfolioItemComponent implements OnInit {
 
   setItem(item) {
     this.currentItem = item;
+    this.currentPhoto = item.photo
   }
 
   setAction(action){
