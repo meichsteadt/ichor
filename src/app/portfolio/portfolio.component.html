@@ -1,6 +1,24 @@
-<div *ngIf="currentRoute !== '/admin'">
-  <div class="portfolioItem" *ngFor="let item of portfolioItems | async; let i = index" [class]="setClass(i)">
-    <img src="{{item.photo}}" alt="{{item.client}}">
-    <div class="clearfix"></div>
+<div id="portfolio" class="clearfix">
+  <div *ngIf="currentRoute !== '/admin'">
+    <div class="portfolioItem" *ngFor="let item of portfolioItems | async; let i = index" [class]="setClass(i)">
+      <a (click)="showModal(item.$key)">
+        <img src="{{item.photo}}" alt="{{item.client}}">
+      </a>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
+
+<div *ngFor="let item of portfolioItems | async" id="{{item.$key}}" class="portfolioModal">
+  <button type="button" class="close" (click)="hideModal(item.$key)">&times;</button>
+  <div class="col-sm-7">
+    <img src="{{item.photoOpen}}" alt="{{item.client}}" class="img-responsive">
+  </div>
+  <div class="col-sm-5">
+    <h2>{{item.client}}</h2>
+    <p>{{item.description}}</p>
+    <a href="{{item.url}}">View their Website</a>
+    <h4>Client Review:</h4>
+    <p>{{item.review}}</p>
   </div>
 </div>

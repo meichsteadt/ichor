@@ -22,6 +22,14 @@ import { BlogComponent } from './blog/blog.component';
 import { BlogSingleComponent } from './blog-single/blog-single.component';
 import { EditBlogComponent } from './edit-blog/edit-blog.component';
 import { MarkdownModule } from 'angular2-markdown';
+import { PortfolioSingleComponent } from './portfolio-single/portfolio-single.component';
+import { TeamMemberSingleComponent } from './team-member-single/team-member-single.component';
+import { MapsComponent } from './maps/maps.component';
+import { MessagerComponent } from './messager/messager.component';
+import { ContactComponent } from './contact/contact.component';
+import { ServiceComponent } from './service/service.component';
+import { HomeComponent } from './home/home.component';
+import {CategoryPipe } from './category.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -48,7 +56,15 @@ const firebaseAuthConfig = {
     EmailComponent,
     BlogComponent,
     BlogSingleComponent,
-    EditBlogComponent
+    EditBlogComponent,
+    PortfolioSingleComponent,
+    TeamMemberSingleComponent,
+    MapsComponent,
+    MessagerComponent,
+    ContactComponent,
+    ServiceComponent,
+    HomeComponent,
+    CategoryPipe
   ],
   imports: [
     BrowserModule,

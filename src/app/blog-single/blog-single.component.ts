@@ -14,6 +14,7 @@ export class BlogSingleComponent implements OnInit {
   blogPost: FirebaseObjectObservable<any>;
   postCategories: FirebaseListObservable<any[]>;
   blogContent: string;
+  style: string = "<style>markdown h1, markdown h2, markdown h3 { text-align: center}</style>"
   constructor(private route: ActivatedRoute, private location: Location, private angularFire: AngularFire) {
 
    }
@@ -24,7 +25,7 @@ export class BlogSingleComponent implements OnInit {
     });
     this.blogPost = this.angularFire.database.object('/blog/posts/' + this.blogId);
     this.postCategories = this.angularFire.database.list('/blog/posts/' + this.blogId + '/categories');
-    this.angularFire.database.object('/blog/posts/' + this.blogId).subscribe(post => this.blogContent = post.content)
+    this.angularFire.database.object('/blog/posts/' + this.blogId).subscribe(post => this.blogContent = post.content + this.style)
   }
 
 }

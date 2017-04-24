@@ -1,48 +1,903 @@
-/* You can add global styles to this file, and also import other style files */
-li[role="presentation"]:hover {
-  cursor: pointer;
+@font-face {
+  font-family: Branding-Medium;
+  src: url('./fonts/Branding-Medium.otf');
+}
+@font-face {
+  font-family: Branding-Black;
+  src: url('./fonts/Branding-Black.otf');
+}
+@font-face {
+  font-family: Branding-Medium;
+  src: url('./fonts/Branding-Medium.otf');
+}
+@font-face {
+  font-family: Branding-Semibold;
+  src: url('./fonts/Branding-Semibold.otf');
+}
+@font-face {
+  font-family: Branding-Semilight;
+  src: url('./fonts/Branding-Semilight.otf');
+}
+@font-face {
+  font-family: Branding-Bold;
+  src: url('./fonts/Branding-Bold.otf');
 }
 
-.editPhoto {
-  width: 100px;
-  height: 100px;
-  display: inline;
-  margin: 20px;
-}
-
-.currentPhoto {
-  width: 120px;
-  height: 120px;
-  border: 10px solid rgba(0,0,0,0.3);
-  margin: 10px;
-}
-
-ul.nav {
-  margin-top: 20px;
+h1, h2, h3 {
+  margin-top: 0 !important;
 }
 
 a:hover {
   cursor: pointer;
 }
 
-.email {
-  margin: 100px;
+.link:hover {
+  cursor: pointer;
 }
 
-.posts {
-  width: 66%;
+/*========================= Home Page Styles ===============================*/
+
+.nav {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  min-height: 101px;
+  box-shadow: 0px 3px 5px rgba(0,0,0,0.5);
 }
 
-.categories {
-  width: 33%;
-  float: right;
-  height: 400px;
+.nav::after {
+  display: table;
+  clear: both;
+  content: ' ';
+}
+
+.nav .logo {
+  margin: 20px;
+  display: none;
+}
+
+.logo img {
+  width: 125px;
+}
+
+.nav a {
+  padding: 10px;
+  color: #fff;
+  font-family: Branding-Medium;
+  font-size: 24px;
+}
+
+.nav a:hover, .nav a:focus {
+  color: #fff;
+}
+
+.nav .links {
+  position: absolute;
+  right: 25px;
+  bottom: 15px;
+}
+
+.nav.scrolled {
+  background-color: #fff;
+}
+
+.nav.scrolled a {
+  color: #333;
+}
+
+.nav.scrolled a:focus {
+  color: #BB2A2D;
+}
+
+.nav.scrolled a.active {
+  color: #BB2A2D;
+}
+
+.nav.scrolled .logo {
+  display: block;
+}
+
+#splash {
+  background-color: #000;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+#splash .content {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
+
+#splash h1 {
+  margin: 0;
+  font-size: 65px;
+  color: #FFD36D;
+  font-family: Branding-Black;
+}
+
+#splash h3 {
+  font-family: Branding-Medium;
+  font-size: 25px;
+  color: #FFFFFF;
+  letter-spacing: 0.17px;
+}
+
+#splash h2 {
+  /* We help you tell who: */
+  font-family: Georgia-Italic;
+  font-size: 32px;
+  color: rgba(255,255,255,0.81);
+  letter-spacing: 0;
+  line-height: 38px;
+}
+
+#splash p {
+  /* A bond between an ag: */
+  font-family: Branding-Semilight;
+  font-size: 18px;
+  color: rgba(255,255,255,0.81);
+  letter-spacing: 0;
+}
+
+#featured-work {
+  position: relative;
+  min-height: 90vh;
+}
+
+#featured-work > .bg {
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/ichor-dea55.appspot.com/o/images%2Fportfolio%2Fubr.jpg?alt=media&token=71344a32-8e30-4d71-bef5-cd2b73947b23');
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  filter: brightness(115%);
+  z-index: -1;
+}
+
+#featured-work .content {
+  z-index: 9;
+  padding: 50px;
+}
+
+#featured-work h1 {
+  /* WE CREATE WORK THAT: */
+  font-family: Branding-Black;
+  font-size: 48px;
+  color: #FFD36D;
+  text-transform: uppercase;
+}
+
+#description {
+  /* Rectangle 7: */
+  background: rgba(51, 51, 51, .64);
+  margin: 20px 0;
+  max-width: 665px;
   padding: 20px;
 }
 
-.post {
-  width: 50%;
+#featured-work h4 {
+  /* project name: */
+  font-family: Branding-Bold;
+  font-size: 24px;
+  color: #FFFFFF;
+}
+
+#featured-work p {
+  /* project description: */
+  font-family: Branding-Medium;
+  font-size: 19px;
+  color: #FFFFFF;
+  line-height: 27px;
+}
+
+#featured-work a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+#view-more {
+  /* View more projects >: */
+  font-family: Branding-Semibold;
+  font-size: 22px;
+  margin-top: 150px !important;
+}
+
+#view-more a {
+  color: #FFD36D;
+}
+
+#where-we-are {
+  min-height: 90vh;
+  padding: 50px;
+}
+
+#where-we-are h1 {
+  font-family: Branding-Black;
+  font-size: 48px;
+  color: #2994A4;
+  text-transform: uppercase;
+}
+
+#where-we-are .active {
+  color: #2994A4;
+}
+
+#where-we-are h5:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#where-we-are p {
+  font-family: Branding-Semilight;
+}
+
+#states div{
+  margin-top: 40px;
+  line-height: 26px;
+}
+
+#contact {
+  min-height: 90vh;
+  background-color: #000;
+  padding: 50px;
+}
+
+#contact h1 {
+  /* Email: */
+  font-family: Branding-Black;
+  font-size: 48px;
+  color: #2994A4;
+  text-transform: uppercase;
+}
+
+#contact h2 {
+  /* Tell us what is on y: */
+  font-family: Branding-Bold;
+  font-size: 30px;
+  color: #2994A4;
+}
+
+#contact p {
+  /* connect@ichorstudios: */
+  font-family: Branding-Medium;
+  font-size: 24px;
+  color: #FFD36D;
+}
+
+#contact i {
+  color: #FFD36D;
+  padding: 5px;
+}
+
+.section {
+  margin: 20px 0;
+}
+
+.button {
+  font-family: Branding-Bold;
+  font-size: 15px;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  background-color: #000;
+  padding: 5px 10px;
+}
+
+#email {
+  margin-bottom: 50px;
+}
+
+#email input {
+  border: none;
+  border-bottom: 1px solid #FFFFFF;
+  font-family: Branding-Semilight;
+  font-size: 18px;
+  color: rgba(255,255,255,0.60);
+  background-color: transparent;
+  width: 300px;
+}
+
+#messager input{
+  padding: 5px;
+  width: 100%;
+  /* Name: */
+  font-family: Branding-Medium;
+  font-size: 20px;
+  color: #333333;
+}
+
+#messager textarea {
+  width: 100%;
+  font-family: Branding-Medium;
+  font-size: 20px;
+  color: #333333;
+  margin-bottom: 15px;
+}
+
+.right {
+  float: right;
+}
+
+/*========================= Home Page Styles ===============================*/
+
+#about {
+  background-color: #000;
+  padding-top: 110px;
+  min-height: 100vh;
+  padding: 50px 50px 0px 50px;
+}
+
+#about p {
+  /* Ichor Studios is a w: */
+  font-family: Branding-Medium;
+  font-size: 18px;
+  color: #FFFFFF;
+  line-height: 28px;
+}
+
+#definition {
+  margin: 25vh 50px 50px 50px;
+  padding-left: 20px;
+}
+
+#definition hr {
+  width: 300px;
+  margin: 10px -20px;
+  max-width: 100%;
+}
+
+#definition h1 {
+  font-family: Georgia;
+  font-size: 48px;
+  color: #FFD36D;
+}
+
+#definition p {
+  font-family: Branding-Semilight;
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 26px;
+}
+
+#call {
+  margin: 60px auto;
+  text-align: center;
+}
+
+#call p {
+  font-family: Branding-Medium;
+  font-size: 18px;
+  color: #FFD36D;
+  margin-bottom: 0;
+}
+
+#call i {
+  font-size: 28px;
+  color: #FFD36D;
+}
+#values {
+  padding: 50px;
+  height: 90vh;
+}
+
+#values .col-sm-4 {
+  margin: 0;
+  padding: 0;
+}
+
+#values h1{
+  /* what we value: */
+  font-family: Branding-Black;
+  font-size: 48px;
+  color: #2994A4;
+}
+
+#values table {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  height: 45vh;
+}
+
+#values .middle {
+  border-left: 2px solid rgba(41,148,164,.2);
+  border-right: 2px solid rgba(41,148,164,.2);
+}
+
+#values .top {
+  border-bottom: 2px solid rgba(41,148,164,.2);
+}
+
+#values td {
+  font-family: Branding-Bold;
+  font-size: 40px;
+  color: #333;
+}
+
+.teal {
+  color: #2994A4;
+}
+
+#story {
+  background-color: #000;
+  min-height: 90vh;
+  padding: 50px 50px 0 50px;
+}
+
+#story h1 {
+  margin-bottom: 20px;
+  font-size: 65px;
+  color: #FFD36D;
+  font-family: Branding-Black;
+}
+
+#story p {
+  font-family: Branding-Medium;
+  font-size: 18px;
+  color: #FFFFFF;
+  line-height: 28px;
+}
+
+#story em {
+  font-family: Georgia;
+  color: #FBEED0;
+  font-size: 24px;
+}
+
+/*========================= Team Section Styles ===================*/
+#team {
+  padding: 50px;
+}
+
+#team h1 {
+  font-family: Branding-Black;
+  font-size: 48px;
+  color: #2994A4;
+}
+
+#team .member {
+  height: 30vw;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+
+#team .bg, #team .alt {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#team .alt {
+  top: -110%;
+}
+
+.bg img, .alt img {
+  min-width: 100%;
+  min-height:100%;
+}
+
+/*========================= Team Single Styles ===============================*/
+
+#teamMember {
+  padding-top: 110px;
+  height: 100vh;
+}
+
+#teamMember h1 {
+  margin-bottom: 0;
+  font-size: 65px;
+  color: #333;
+  font-family: Branding-Black;
+}
+#teamMember h3 {
+  margin-bottom: 20px;
+  font-size: 35px;
+  color: #2994A4;
+  font-family: Branding-Light;
+  font-style: italic;
+}
+
+#teamMember p {
+  font-size: 18px;
+  font-family: Branding-Semilight;
+}
+
+#teamMember img {
+  max-height: 80vh;
+  margin: 0 auto;
+}
+
+/*========================= Services Styles ===============================*/
+#services {
+  padding-top: 101px;
+  height: 90vh;
+}
+
+#services .bg {
+  background: url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?dpr=1&auto=format&fit=crop&w=1500&h=998&q=80&cs=tinysrgb&crop=&bg=') center center no-repeat;
+  background-size: cover;
+  opacity: .25;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+#services .col-md-6 {
+  padding: 0;
+}
+
+.service {
+  height: 30vh;
+  position: relative;
+  text-align: center;
+  transition: all .3s ease;
+}
+
+.service:hover {
+  opacity: 1 !important;
+  z-index: 1;
+}
+
+.service:hover p {
+  display: block;
+  transition: all .3s ease;
+}
+
+.service:hover h1 {
+  display: none;
+  transition: all .3s ease;
+}
+
+.service p {
+  display: none;
+  font-family: Branding-Medium;
+  font-size: 18px;
+  line-height: 27px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+}
+
+.service h1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  font-family: Branding-Black;
+  font-size: 36px;
+}
+
+#service1, #service6 {
+  background: #fff;
+  opacity: .7;
+  color: rgb(51,51,51);
+}
+
+#service2 {
+  background-color: rgb(255, 211, 109);
+  opacity: .7;
+  color: #fff;
+}
+
+#service3, #service4 {
+  background: rgb(41,148,164);
+  opacity: .7;
+  color: #fff;
+}
+
+#service5 {
+  background-color: rgb(51, 51, 51);
+  opacity: .7;
+  color: #fff;
+}
+
+#service1:hover {
+  box-shadow: 0px 7px 10px rgba(0,0,0,0.3), 7px 0px 10px rgba(0,0,0,0.3);
+}
+
+#service2:hover {
+  box-shadow: 0px 7px 10px rgba(0,0,0,0.3), 0px -7px 10px rgba(0,0,0,0.3), 7px 0px 10px rgba(0,0,0,0.3);
+}
+
+#service3:hover {
+  box-shadow: 0px -7px 10px rgba(0,0,0,0.3), 7px 0px 10px rgba(0,0,0,0.3);
+}
+
+#service4:hover {
+  box-shadow: 0px 7px 10px rgba(0,0,0,0.3), -7px 0px 10px rgba(0,0,0,0.3);
+}
+
+#service5:hover {
+  box-shadow: 0px 7px 10px rgba(0,0,0,0.3), 0px -7px 10px rgba(0,0,0,0.3), -7px 0px 10px rgba(0,0,0,0.3);
+}
+
+#service6:hover {
+  box-shadow: 0px -7px 10px rgba(0,0,0,0.3), -7px 0px 10px rgba(0,0,0,0.3);
+}
+
+/*========================= Blog Page Styles ===============================*/
+#blog {
+  padding: 151px 50px 50px 50px;
+}
+
+#blog h1 {
+  font-family: Branding-Black;
+  font-size: 36px;
+  color: #2994A4;
+}
+
+#blog .categories h4 {
+  font-family: Branding-Bold;
+  font-size: 23px;
+  color: #2994A4;
+}
+
+#blog .categories p {
+  font-family: Geneva;
+  font-size: 18px;
+  color: #333333;
+}
+
+#blog .categories ul {
+  list-style: none;
+  padding: 0;
+}
+
+#blog .post {
   height: 400px;
-  padding: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+#blog .post img {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  filter: brightness(110%);
+}
+
+#blog .postContent {
+  background: rgba(51,51,51,0.50);
+  width: 100%;
+  height: 15%;
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+  font-family: Branding-Medium;
+  font-size: 24px;
+  color: #FFFFFF;
+}
+
+#blog-single {
+  background-color: #eee;
+}
+
+#blog-single .post {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+}
+
+#blog-single .image {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+}
+
+#blog-single .image img{
+  width: 100%;
+  height: 100%;
+  filter: brightness(120%);
+}
+
+#blog-single .title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#blog-single .title h1 {
+  font-family: Georgia-Italic;
+  font-size: 48px;
+  color: #333333;
+}
+
+#blog-single .header {
+  height: 100vh;
+}
+
+#blog-single .content {
+  width: 80%;
+  padding-top: 25px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 50px;
+}
+
+#blog-single .content p {
+  font-family: Branding-Semilight;
+  font-size: 20px;
+  color: #333333;
+  line-height: 25px;
+}
+
+#blog-single h1, #blog-single h2, #blog-single h3, #blog-single h4{
+  text-align: center;
+  font-family: Branding-Bold;
+}
+
+#blog-single .categories h4 {
+  font-family: Branding-Bold;
+  font-size: 23px;
+  color: #2994A4;
+  display: inline;
+}
+
+#blog-single .categories ul {
+  list-style: none;
+  padding: 0;
+  display: inline;
+}
+
+#blog-single .categories li {
+  font-family: Branding-Semilight;
+  font-size: 20px;
+  color: #333333;
+  line-height: 25px;
+  display: inline;
+}
+/*========================= Footer Styles ===============================*/
+#portfolio {
+  padding-top: 101px;
+}
+
+.portfolio {
   float: left;
+  overflow: hidden;
+  position: relative;
+  transition: all .3s ease;
+}
+
+.portfolio:hover img {
+  filter: grayscale(0);
+}
+.portfolio img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  filter: grayscale(100%);
+  transition: all .3s ease;
+}
+.bg-square {
+  width: 40%;
+  height: 90vh;
+  float: right;
+}
+
+.bg-square img {
+  height: 100%;
+  width: auto;
+}
+
+.sm-square {
+  width: 20%;
+  height: 45vh;
+}
+
+.sm-square img {
+  width: 100%;
+  height: 100%;
+}
+
+.rectangle {
+  width: 60%;
+  height: 45vh;
+}
+
+.rectangle img {
+  width: 100%;
+  top: 0;
+  transform: translate(-50%, 0);
+}
+
+.portfolioModal {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  z-index: 100;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.portfolioModal img {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+}
+
+.portfolioModal .col-sm-7 {
+  padding: 0;
+}
+
+.portfolioModal .col-sm-5 {
+  height: 100%;
+  padding: 30px;
+  overflow-y: scroll;
+}
+
+.portfolioModal button {
+  position: absolute;
+  z-index: 101;
+  top: 10px;
+  right: 10px;
+}
+
+.portfolioModal h2 {
+  text-align: center;
+  font-family: Branding-Bold;
+  font-size: 36px;
+  color: #333333;
+}
+
+.portfolioModal p {
+  font-family: Branding-Medium;
+  font-size: 16px;
+  color: #4A4A4A;
+  line-height: 27px;
+}
+
+.portfolioModal a {
+  text-align: center;
+  font-family: Branding-Medium;
+  font-size: 18px;
+  color: #BB2A2D;
+  line-height: 27px;
+  margin: 30px auto;
+  display: block;
+  text-decoration: underline;
+}
+
+.portfolioModal h4 {
+  font-family: Branding-Semibold;
+  font-size: 22px;
+  color: #4A4A4A;
+}
+
+
+/*========================= Footer Styles ===============================*/
+footer {
+  background-color: #BB2A2D;
+  min-height: 50px;
+  color: #fff;
+  padding: 10px;
+  float: left;
+  width: 100%;
+}
+
+footer #icons {
+  float: left;
+  font-size: 24px;
+}
+
+footer #copyright {
+  margin-top: 5px;
+  float: right;
+}
+
+#copyright p {
+  margin: 0;
 }

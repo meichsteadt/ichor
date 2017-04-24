@@ -1,0 +1,46 @@
+<div id="splash">
+  <div class="content">
+    <h1>Ichor Studios</h1>
+    <h3>Tech Consulting | Branding | Web Design &amp; Development</h3>
+    <h2><em>We create compelling websites for small businesses and non-profits</em></h2>
+    <p>A bond between an agency and a client is often undervalued, but for Ichor, it's all about creating strong bonds with clients.
+    <br>If we know you better, we can help your communities get to know you better too.</p>
+  </div>
+</div>
+<div id="featured-work">
+  <div class="bg"></div>
+  <div class="content">
+    <h1>We create work that lasts</h1>
+    <div id="description">
+      <h4>Featured Project: Uptown Barrel Room</h4>
+      <p>Uptown Barrel Room is Occupy kitsch plaid cornhole tattooed sartorial four dollar toast pour-over. Irony tilde retro, messenger bag hammock gluten-free. <a href="#">Click to view website</a></p>
+    </div>
+    <h3 id="view-more"><a routerLink="/portfolio" routerLinkActive="active">View more projects >></a></h3>
+  </div>
+</div>
+<div class="clearfix"></div>
+<div id="where-we-are">
+  <h1>Where we are</h1>
+  <div id="states" class="col-sm-4 col-sm-push-8">
+    <div [class.active]="getState('oregon')" id="oregon">
+      <h5 (click)="setState('oregon')">Oregon</h5>
+      <p>4 Team Members</p>
+    </div>
+    <div [class.active]="getState('washington')" id="washington">
+      <h5 (click)="setState('washington')">Washington</h5>
+      <p>3 Team Members</p>
+    </div>
+    <div [class.active]="getState('virginia')" id="virginia">
+      <h5 (click)="setState('virginia')">Virginia</h5>
+      <p>2 Team Members</p>
+    </div>
+  </div>
+  <div class="col-sm-8 col-sm-pull-4">
+    <img [class.hide]="hideState('oregon')" src="https://files.slack.com/files-tmb/T4M4RNG3U-F4X64VBFA-73c97b44c7/portland_480.png" alt="Ichor Oregon" class="img-responsive">
+    <img [class.hide]="hideState('washington')" src="https://files.slack.com/files-tmb/T4M4RNG3U-F4XSW78EN-058d13c0ec/washington_480.png" alt="Ichor Washington" class="img-responsive hide">
+    <img [class.hide]="hideState('virginia')" src="https://files.slack.com/files-pri/T4M4RNG3U-F4YFS6Q6A/virginia.png" alt="Ichor Virginia" class="img-responsive hide">
+  </div>
+  <div class="clearfix"></div>
+</div>
+<app-contact></app-contact>
+<div class="clearfix"></div>

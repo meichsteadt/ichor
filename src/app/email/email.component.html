@@ -1,5 +1,7 @@
-<div class="email">
-  <label>Email</label>
-  <input type="text" #email>
-  <button (click)="addEmail(email.value)">Add</button>  
+<div id="email">
+  <h1>Stay Up to Date</h1>
+  <form>
+    <input placeholder="Enter Email Address" type="email" #email>
+    <button (click)="add(email.value)" class="button">Sign Up</button>
+  </form>
 </div>

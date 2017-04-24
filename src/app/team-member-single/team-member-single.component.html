@@ -1,0 +1,10 @@
+<div id="teamMember" class="clearfix">
+  <div class="col-sm-6">
+    <img class="img-responsive" src="{{(teamMember| async)?.photo}}" alt="{{(teamMember| async)?.name}}">
+  </div>
+  <div class="col-sm-6">
+    <h1>{{(teamMember| async)?.name}}</h1>
+    <h3>{{(teamMember | async)?.title}}</h3>
+    <p>{{(teamMember| async)?.text}}</p>
+  </div>
+</div>

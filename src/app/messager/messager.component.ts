@@ -1,4 +1,4 @@
-import { Component, OnInit }  from '@angular/core';
+import { Component } from '@angular/core';
 import { Http, Response, Headers, RequestOptions }     from '@angular/http';
 import { mailChimp } from '../api-keys';
 
@@ -7,22 +7,27 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
 @Component({
-  selector: 'app-email',
-  templateUrl: './email.component.html',
-  styleUrls: ['./email.component.css']
+  selector: 'app-messager',
+  templateUrl: './messager.component.html',
+  styleUrls: ['./messager.component.css']
 })
-export class EmailComponent implements OnInit {
+export class MessagerComponent {
 
   constructor(private http: Http) { }
 
-  ngOnInit() {
-  }
 
-  add(email: string) {
+  submit(name: string, company: string, phone: string, email: string, referal: string, message: string) {
     let headers = new Headers({ 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': true });
     let options = new RequestOptions({ headers: headers });
-    let body = {"email_address": btoa(email), "key": btoa(mailChimp.serverKey), "password": btoa(mailChimp.serverPassword)}
-    this.http.post("http://localhost:3000/mailchimp", body, options).subscribe(a => console.log(this.extractData(a)))
+    let url = "http://localhost:3000/mailgun"
+    let body = {
+                  "name": btoa(name),
+                  "email": btoa(email),
+                  "message": btoa(message),
+                  "key": btoa(mailChimp.serverKey),
+                  "password": btoa(mailChimp.serverPassword)
+                }
+    this.http.post(url, body, options).subscribe(response => console.log(this.extractData(response)))
   }
 
   private extractData(res: Response) {

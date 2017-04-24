@@ -8,7 +8,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 })
 export class PortfolioComponent implements OnInit {
   portfolioItems: FirebaseListObservable<any[]>;
-
+  windowHeight: number;
   constructor(private angularFire: AngularFire) {
     this.portfolioItems = angularFire.database.list('portfolio');
   }
@@ -26,6 +26,33 @@ export class PortfolioComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
+  showModal(id) {
+    let div = document.getElementById(id);
+    let delay;
+    let fade;
+    let transition = "all .9s ease";
+    div.style.transition = "";
+    div.style.display = "none";
+    div.style.left = "-100%";
+    div.style.display = "block";
+    clearTimeout(delay);
+    clearTimeout(fade);
+    delay = setTimeout(function(){
+      div.style.transition = transition;
+      div.style.left = "0";
+    }, 0)
+    fade = setTimeout(function(){
+      document.getElementById('portfolio').style.display = "none";
+    }, 1000)
+  }
+
+  hideModal(id) {
+    document.getElementById('portfolio').style.display = "block";
+    let div = document.getElementById(id)
+    div.style.transition = "all .5s";
+    div.style.left = "100%";
+  }
 }

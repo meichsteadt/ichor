@@ -1,12 +1,28 @@
-<div class="container">
-  <a routerLink="/about" routerLinkActive="active">About</a>
-  |
-  <a routerLink="/portfolio" routerLinkActive="active">Portfolio</a>
-  |
-  <a routerLink="/blog" routerLinkActive="active">Blog</a>
-  <span *ngIf="adminRoute()">
-    <a (click)=authService.login() *ngIf="!authService.loggedIn()">Log In</a>
-    <a (click)=authService.logout() *ngIf="authService.loggedIn()">Log Out</a>
-  </span>
-  <router-outlet></router-outlet>
+<div [class.scrolled]="rootRoute()" class="nav">
+  <div class="logo">
+    <a [class.active]="currentRoute('/')" routerLink="/" routerLinkActive="active">
+      <img src="http://ichorstudios.com/assets/img/logo-full.svg" alt="ichor studios logo">
+    </a>
+  </div>
+  <div class="links">
+    <a id="aboutLink" [class.active]="currentRoute('/about')" routerLink="/about" routerLinkActive="active">Ichor Story</a>
+    <a [class.active]="currentRoute('/services')" routerLink="/services" routerLinkActive="active">Services</a>
+    <a [class.active]="currentRoute('/portfolio')" routerLink="/portfolio" routerLinkActive="active">Portfolio</a>
+    <a [class.active]="currentRoute('/blog')" routerLink="/blog" routerLinkActive="active">Blog</a>
+    <span *ngIf="adminRoute()">
+      <a (click)=authService.login() *ngIf="!authService.loggedIn()">Log In</a>
+      <a (click)=authService.logout() *ngIf="authService.loggedIn()">Log Out</a>
+    </span>
+  </div>
 </div>
+<router-outlet></router-outlet>
+<footer>
+  <div id="icons">
+    <i class="fa fa-twitter"></i>
+    <i class="fa fa-facebook"></i>
+    <i class="fa fa-instagram"></i>
+  </div>
+  <div id="copyright">
+    <p>Copyright &copy; Ichor Studios 2017</p>
+  </div>
+</footer>

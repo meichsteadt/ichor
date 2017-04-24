@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
@@ -8,9 +8,10 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.css']
 })
-export class BlogComponent {
+export class BlogComponent implements OnInit {
   posts: FirebaseListObservable<any[]>;
   categories: FirebaseListObservable<any[]>;
+  currentCategory: string = "all";
 
   constructor(private angularFire: AngularFire, private router: Router) {
     this.posts = angularFire.database.list('blog/posts');
@@ -19,6 +20,13 @@ export class BlogComponent {
 
   goToPost(post) {
     this.router.navigate(['blog', post.$key])
+  }
+
+  ngOnInit() {
+  }
+
+  setCategory(category) {
+    this.currentCategory = category;
   }
 
 }

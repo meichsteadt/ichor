@@ -1,0 +1,35 @@
+<div id="messager">
+  <h2>Get in touch!</h2>
+  <form>
+    <div class="form-group">
+      <div class="col-sm-6">
+        <input type="text" placeholder="name" #name>
+      </div>
+      <div class="col-sm-6">
+        <input type="text" placeholder="company" #company>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-6">
+        <input type="text" placeholder="phone" #phone>
+      </div>
+      <div class="col-sm-6">
+        <input type="text" placeholder="email" #email>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-6">
+        <input type="text" placeholder="how did you hear about us" #referal>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-12">
+        <textarea rows="4" placeholder="message" #message></textarea>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <button class="button right" (click)="submit(name.value, company.value, phone.value, email.value, referal.value, message.value)">Submit</button>
+    </div>
+  </form>
+</div>
