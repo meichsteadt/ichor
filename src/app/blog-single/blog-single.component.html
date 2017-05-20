@@ -1,21 +1,13 @@
 <div id="blog-single">
-  <div class="post">
-    <div class="header">
-      <div class="image">
-        <img src="{{(blogPost |async)?.image}}" alt="">
-      </div>
-      <div class="title">
-        <h1>{{(blogPost | async)?.title}}</h1>
-      </div>
-    </div>
-    <div class="content">
-      <markdown *ngIf="blogContent" [data]="blogContent" id="markdown"></markdown>
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <img src="{{(blogPost | async)?.image}}" alt="{{(blogPost |async)?.title}}" class="img-responsive">
+      <h4>{{(blogPost |async)?.date}}</h4>
       <hr>
-      <div class="categories">
-        <h4>Categories:</h4>
-        <ul>
-          <li *ngFor="let category of postCategories | async">{{category.$value}}</li>
-        </ul>
+      <h1 class="title">{{(blogPost |async)?.title}}</h1>
+      <p>{{(blogPost |async)?.description}}</p>
+      <div class="content">
+        <markdown *ngIf="blogContent" [data]="blogContent" id="markdown"></markdown>
       </div>
     </div>
   </div>

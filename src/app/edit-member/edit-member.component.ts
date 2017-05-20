@@ -10,7 +10,7 @@ import { AngularFire, FirebaseListObservable, FirebaseObjectObservable, Firebase
 export class EditMemberComponent implements OnInit {
   members: FirebaseListObservable<any[]>;
   photos: FirebaseListObservable<any[]>;
-  blankMember: TeamMember = new TeamMember('','','');
+  blankMember: TeamMember = new TeamMember('','','','');
   currentMember: TeamMember = this.blankMember;
   currentAction: string = 'new';
   currentPhoto;
@@ -21,6 +21,7 @@ export class EditMemberComponent implements OnInit {
     this.members = angularFire.database.list('members');
     this.photos = angularFire.database.list('images/members')
     this.firebaseRef = firebaseApp.storage().ref();
+    console.log(this.firebaseRef)
   }
 
   onChange(event) {
@@ -33,7 +34,7 @@ export class EditMemberComponent implements OnInit {
   }
 
   resetMember() {
-    this.blankMember = new TeamMember('','','');
+    this.blankMember = new TeamMember('','','','');
     this.currentMember = this.blankMember;
   }
 
@@ -61,10 +62,14 @@ export class EditMemberComponent implements OnInit {
 
   updateMember(memberToUpdate) {
     let memberInFirebase = this.getMemberByID(memberToUpdate.$key);
+    memberToUpdate.name = this.emptyField(memberToUpdate.name);
+    memberToUpdate.text = this.emptyField(memberToUpdate.text);
+    memberToUpdate.title = this.emptyField(memberToUpdate.title);
     memberInFirebase.update({
       name: memberToUpdate.name,
       text: memberToUpdate.text,
-      photo: memberToUpdate.photo
+      photo: memberToUpdate.photo,
+      title: memberToUpdate.title
     });
   }
 
@@ -99,8 +104,8 @@ export class EditMemberComponent implements OnInit {
     let url;
     if(this.currentFile) {
       let name = this.currentFile.name;
-      this.firebaseRef.child(name).put(this.currentFile)
-      .then(a => this.firebaseRef.child(name).getDownloadURL()
+      this.firebaseRef.child('images/members/' + name).put(this.currentFile)
+      .then(a => this.firebaseRef.child('images/members/' + name).getDownloadURL()
         .then(url => this.angularFire.database.list('images/members').push({ url: url, name: name}))
       )
     }
@@ -108,5 +113,14 @@ export class EditMemberComponent implements OnInit {
 
   selectPhoto() {
     this.currentMember.photo = this.currentPhoto;
+  }
+
+  emptyField(field) {
+    if(!field) {
+      return '';
+    }
+    else {
+      return field
+    }
   }
 }

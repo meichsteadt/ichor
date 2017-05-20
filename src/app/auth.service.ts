@@ -21,7 +21,7 @@ export class AuthService {
         localStorage.setItem('profile', JSON.stringify(profile));
       });
       this.lock.hide();
-      this.router.navigateByUrl('admin');
+      this.router.navigate(['/admin'])
     });
   }
 
@@ -37,7 +37,7 @@ export class AuthService {
   }
 
   loggedIn() {
-    return tokenNotExpired();
+    return tokenNotExpired('id_token');
   }
 
 }

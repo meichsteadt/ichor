@@ -7,10 +7,6 @@
   src: url('./fonts/Branding-Black.otf');
 }
 @font-face {
-  font-family: Branding-Medium;
-  src: url('./fonts/Branding-Medium.otf');
-}
-@font-face {
   font-family: Branding-Semibold;
   src: url('./fonts/Branding-Semibold.otf');
 }
@@ -21,6 +17,14 @@
 @font-face {
   font-family: Branding-Bold;
   src: url('./fonts/Branding-Bold.otf');
+}
+@font-face {
+  font-family: Branding-Light;
+  src: url('./fonts/Branding-Light.otf');
+}
+
+body {
+  overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -37,21 +41,21 @@ a:hover {
 
 /*========================= Home Page Styles ===============================*/
 
-.nav {
+nav {
   position: fixed;
   z-index: 10;
   width: 100%;
   min-height: 101px;
-  box-shadow: 0px 3px 5px rgba(0,0,0,0.5);
+  transition: all .3s ease;
 }
 
-.nav::after {
+nav::after {
   display: table;
   clear: both;
   content: ' ';
 }
 
-.nav .logo {
+nav .logo {
   margin: 20px;
   display: none;
 }
@@ -60,41 +64,141 @@ a:hover {
   width: 125px;
 }
 
-.nav a {
-  padding: 10px;
+nav a {
+  padding: 16px;
   color: #fff;
   font-family: Branding-Medium;
-  font-size: 24px;
+  font-size: 20px;
 }
 
-.nav a:hover, .nav a:focus {
+nav a:hover, nav a:focus {
   color: #fff;
 }
 
-.nav .links {
+nav .links {
   position: absolute;
   right: 25px;
   bottom: 15px;
 }
 
-.nav.scrolled {
+nav.scrolled {
   background-color: #fff;
+  box-shadow: 0px 3px 5px rgba(0,0,0,0.5);
 }
 
-.nav.scrolled a {
+nav.scrolled a {
   color: #333;
 }
 
-.nav.scrolled a:focus {
+nav.scrolled a:focus {
   color: #BB2A2D;
 }
 
-.nav.scrolled a.active {
+nav.scrolled a.active {
   color: #BB2A2D;
 }
 
-.nav.scrolled .logo {
+nav.scrolled .logo {
+  display: inline-block;
+}
+
+nav.admin {
+  position: relative;
+}
+
+nav.admin .links {
+  position: static;
+  float: right;
+  margin-top: 40px;
+}
+
+nav.admin .links a{
+  font-size: 20px;
+}
+
+#hamburger {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  transition: all .3s ease;
+  display: none;
+  z-index: 998;
+  color: #fff;
+}
+
+nav.scrolled #hamburger  {
+  color: #333;
+}
+
+nav #hamburger:hover {
+  cursor: pointer;
+  color: #2994A4;
+}
+
+#hamburger p {
+  font-family: Branding-Light;
+  display: inline-block;
+  position: relative;
+  top: -2px;
+}
+
+#nav-mobile {
+  top: 0;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background-color: #fff;
+  z-index: -1;
+  box-shadow: 5px 0px 10px rgba(0,0,0,0.7);
+  transition: all .4s ease;
+  opacity: 0;
+}
+
+#nav-mobile a {
   display: block;
+  padding: 20px 10px;
+  font-family: Branding-Medium;
+  font-size: 28px;
+  text-align: center;
+  transition: all .4s ease;
+  width: 100%;
+  padding: 16px;
+  color: #333;
+  font-family: Branding-Medium;
+}
+
+#nav-mobile .links {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#nav-mobile .fa-times {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  transition: all .3s ease;
+}
+#nav-mobile .fa-times:hover {
+  cursor: pointer;
+  color: #BB2A2D;
+}
+
+#nav-mobile a:hover, #nav-mobile a:focus, #nav-mobile a.active {
+  color: #BB2A2D;
+}
+
+@media screen and (max-width: 767px) {
+  nav .links {
+    display: none;
+  }
+
+  nav #hamburger {
+    display: block
+  }
 }
 
 #splash {
@@ -225,13 +329,8 @@ a:hover {
   color: #2994A4;
 }
 
-#where-we-are h5:hover {
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-#where-we-are p {
-  font-family: Branding-Semilight;
+#states {
+  margin-bottom: 20px;
 }
 
 #states div{
@@ -239,85 +338,36 @@ a:hover {
   line-height: 26px;
 }
 
-#contact {
-  min-height: 90vh;
-  background-color: #000;
-  padding: 50px;
+#states div:hover {
+  cursor: pointer;
 }
 
-#contact h1 {
-  /* Email: */
-  font-family: Branding-Black;
-  font-size: 48px;
-  color: #2994A4;
-  text-transform: uppercase;
-}
-
-#contact h2 {
-  /* Tell us what is on y: */
-  font-family: Branding-Bold;
-  font-size: 30px;
-  color: #2994A4;
-}
-
-#contact p {
-  /* connect@ichorstudios: */
-  font-family: Branding-Medium;
+#states h5 {
   font-size: 24px;
-  color: #FFD36D;
+  font-family: Branding-Black;
 }
 
-#contact i {
-  color: #FFD36D;
-  padding: 5px;
-}
-
-.section {
-  margin: 20px 0;
-}
-
-.button {
-  font-family: Branding-Bold;
-  font-size: 15px;
-  color: #FFFFFF;
-  border: 1px solid #FFFFFF;
-  background-color: #000;
-  padding: 5px 10px;
-}
-
-#email {
-  margin-bottom: 50px;
-}
-
-#email input {
-  border: none;
-  border-bottom: 1px solid #FFFFFF;
+#states p {
+  font-size: 16px;
   font-family: Branding-Semilight;
-  font-size: 18px;
-  color: rgba(255,255,255,0.60);
-  background-color: transparent;
-  width: 300px;
-}
-
-#messager input{
-  padding: 5px;
-  width: 100%;
-  /* Name: */
-  font-family: Branding-Medium;
-  font-size: 20px;
-  color: #333333;
-}
-
-#messager textarea {
-  width: 100%;
-  font-family: Branding-Medium;
-  font-size: 20px;
-  color: #333333;
-  margin-bottom: 15px;
 }
 
 .right {
   float: right;
+}
+
+@media screen and (max-width: 767px) {
+  #states p {
+    display: none;
+  }
+
+  #states .active p {
+    display: block;
+  }
+
+  .map {
+    height: 67vw;
+  }
 }
 
 /*========================= Home Page Styles ===============================*/
@@ -327,14 +377,19 @@ a:hover {
   padding-top: 110px;
   min-height: 100vh;
   padding: 50px 50px 0px 50px;
+  position: relative;
+  overflow: hidden;
 }
 
 #about p {
-  /* Ichor Studios is a w: */
   font-family: Branding-Medium;
   font-size: 18px;
   color: #FFFFFF;
   line-height: 28px;
+}
+
+#about p.about-copy {
+  margin-bottom: 70px;
 }
 
 #definition {
@@ -362,7 +417,10 @@ a:hover {
 }
 
 #call {
-  margin: 60px auto;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
 }
 
@@ -401,6 +459,10 @@ a:hover {
   height: 45vh;
 }
 
+#values .table-responsive {
+  border: none;
+}
+
 #values .middle {
   border-left: 2px solid rgba(41,148,164,.2);
   border-right: 2px solid rgba(41,148,164,.2);
@@ -421,8 +483,8 @@ a:hover {
 }
 
 #story {
-  background-color: #000;
-  min-height: 90vh;
+  background-color: #fff;
+  /*min-height: 90vh;*/
   padding: 50px 50px 0 50px;
 }
 
@@ -436,16 +498,27 @@ a:hover {
 #story p {
   font-family: Branding-Medium;
   font-size: 18px;
-  color: #FFFFFF;
+  color: #333;
   line-height: 28px;
 }
 
 #story em {
   font-family: Georgia;
-  color: #FBEED0;
+  color: #2994A4;
   font-size: 24px;
 }
 
+@media screen and (max-width: 675px) {
+  #values td {
+    font-size: 18px;
+    padding: 5px;
+  }
+
+  #values {
+    padding: 50px 10px;
+    height: auto;
+  }
+}
 /*========================= Team Section Styles ===================*/
 #team {
   padding: 50px;
@@ -458,10 +531,14 @@ a:hover {
 }
 
 #team .member {
-  height: 30vw;
+  height: 23vw;
   position: relative;
   overflow: hidden;
   padding: 0;
+}
+
+#team .member:hover {
+  cursor: pointer;
 }
 
 #team .bg, #team .alt {
@@ -472,13 +549,42 @@ a:hover {
 
 #team .alt {
   top: -110%;
+  overflow: hidden;
+  background: rgba(51,51,51,0.8);
 }
 
-.bg img, .alt img {
+#team .alt .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: Branding-Medium;
+  color: #FFFFFF;
+}
+
+#team .alt .content h4, #team .alt .content h5 {
+  margin: 0;
+}
+
+#team .alt .content h4 {
+  font-size: 40px;
+}
+
+#team .alt .content h5 {
+  font-family: Branding-Light;
+  font-size: 16px;
+}
+
+#team .bg img, #team .alt img {
   min-width: 100%;
   min-height:100%;
 }
 
+@media screen and (max-width:767px) {
+  #team .member {
+    height: 40vw;
+  }
+}
 /*========================= Team Single Styles ===============================*/
 
 #teamMember {
@@ -513,7 +619,7 @@ a:hover {
 /*========================= Services Styles ===============================*/
 #services {
   padding-top: 101px;
-  height: 90vh;
+  position: relative;
 }
 
 #services .bg {
@@ -524,9 +630,10 @@ a:hover {
   z-index: -1;
   width: 100%;
   height: 100%;
+  transform: translateY(-101px);
 }
 
-#services .col-md-6 {
+#services .col-sm-6 {
   padding: 0;
 }
 
@@ -598,6 +705,10 @@ a:hover {
   color: #fff;
 }
 
+#service1 p, #service6 p {
+  color: rgba(0,0,0,0.7);
+}
+
 #service1:hover {
   box-shadow: 0px 7px 10px rgba(0,0,0,0.3), 7px 0px 10px rgba(0,0,0,0.3);
 }
@@ -624,108 +735,71 @@ a:hover {
 
 /*========================= Blog Page Styles ===============================*/
 #blog {
-  padding: 151px 50px 50px 50px;
+  padding: 101px 50px 50px 50px;
 }
 
-#blog h1 {
+#blog .title {
   font-family: Branding-Black;
-  font-size: 36px;
-  color: #2994A4;
+  font-size: 48px;
+  margin-bottom: 20px;
 }
 
-#blog .categories h4 {
-  font-family: Branding-Bold;
-  font-size: 23px;
-  color: #2994A4;
+#blog img {
+  margin: 0 auto;
 }
 
-#blog .categories p {
-  font-family: Geneva;
-  font-size: 18px;
-  color: #333333;
+#blog .title:hover, #blog img:hover, #blog .button:hover {
+  cursor: pointer;
 }
 
-#blog .categories ul {
-  list-style: none;
-  padding: 0;
-}
-
-#blog .post {
-  height: 400px;
-  position: relative;
-  overflow: hidden;
-}
-
-#blog .post img {
-  position: absolute;
-  min-width: 100%;
-  min-height: 100%;
-  filter: brightness(110%);
-}
-
-#blog .postContent {
-  background: rgba(51,51,51,0.50);
-  width: 100%;
-  height: 15%;
-  position: absolute;
-  bottom: 0;
-  padding: 10px;
+#blog h4 {
   font-family: Branding-Medium;
-  font-size: 24px;
-  color: #FFFFFF;
+  margin-top: 50px;
 }
+
+#blog hr {
+  border-color: #333;
+  width: 33%;
+}
+
+#blog .button {
+  width: 150px;
+  height: 50px;
+  transition: all .3s ease;
+  border: 1px solid #2994A4;
+  background-color: #2994A4;
+  margin-top: 20px;
+}
+
+#blog .button:hover {
+  color: #2994A4;
+  background-color: #fff;
+}
+
+.post {
+  margin-bottom: 100px;
+}
+/*========================= Blog Single Styles ===============================*/
 
 #blog-single {
-  background-color: #eee;
+  padding-top: 101px;
 }
 
-#blog-single .post {
-  width: 100%;
-  min-height: 100vh;
-  height: 100%;
+#blog-single hr {
+  border-color: #333;
+  width: 33%;
 }
 
-#blog-single .image {
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  left: 0;
-}
-
-#blog-single .image img{
-  width: 100%;
-  height: 100%;
-  filter: brightness(120%);
-}
-
-#blog-single .title {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-#blog-single .title h1 {
-  font-family: Georgia-Italic;
+#blog-single h1.title {
+  text-align: left;
+  font-family: Branding-Black;
   font-size: 48px;
-  color: #333333;
+  margin-bottom: 20px;
 }
 
-#blog-single .header {
-  height: 100vh;
-}
-
-#blog-single .content {
-  width: 80%;
-  padding-top: 25px;
-  margin: 0 auto;
-  background-color: #fff;
-  padding: 50px;
-}
-
-#blog-single .content p {
+#blog-single p {
   font-family: Branding-Semilight;
-  font-size: 20px;
+  font-size: 18px;
   color: #333333;
   line-height: 25px;
 }
@@ -733,164 +807,403 @@ a:hover {
 #blog-single h1, #blog-single h2, #blog-single h3, #blog-single h4{
   text-align: center;
   font-family: Branding-Bold;
+  margin: 30px !important;
 }
 
-#blog-single .categories h4 {
-  font-family: Branding-Bold;
-  font-size: 23px;
-  color: #2994A4;
-  display: inline;
+#blog-single img {
+  display: block;
+  margin: 0 auto;
 }
 
-#blog-single .categories ul {
-  list-style: none;
-  padding: 0;
-  display: inline;
+
+/*========================= Work Styles ===============================*/
+#work {
+  padding-top: 121px;
+  padding-right: 20px;
 }
 
-#blog-single .categories li {
-  font-family: Branding-Semilight;
-  font-size: 20px;
-  color: #333333;
-  line-height: 25px;
-  display: inline;
-}
-/*========================= Footer Styles ===============================*/
-#portfolio {
-  padding-top: 101px;
-}
-
-.portfolio {
-  float: left;
-  overflow: hidden;
+.portfolio-item {
+  height: 540px;
   position: relative;
-  transition: all .3s ease;
+  padding: 20px;
 }
 
-.portfolio:hover img {
-  filter: grayscale(0);
+.portfolio-panel {
+  width: 100%;
+  height: 100%;
 }
-.portfolio img {
+
+.panel-default > .panel-heading {
+  padding: 0;
+  height: 40%;
+  overflow: hidden;
+}
+
+.panel-heading img {
+  min-height: 100%;
+}
+
+.panel-body {
+  height: 60%;
+  position: relative;
+}
+
+#work h2 {
+  font-size: 22px;
+  text-align: center;
+  font-family: Branding-Medium;
+}
+
+p {
+  font-family: Branding-Light;
+  font-size: 18px;
+}
+
+.more {
+  font-family: Branding-Semibold;
+  color: #BB2A2D;
+  text-decoration: underline;
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+}
+
+.more:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 991px) {
+  .portfolio-item {
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 858px) {
+  .portfolio-item {
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .portfolio-item {
+    height: 480px;
+  }
+  h2 {
+    font-size: 26px;
+  }
+  p {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .portfolio-item {
+    height: 520px;
+  }
+}
+
+
+#work-single {
+  padding: 121px 50px 50px 50px;
+}
+
+#work-single .col-sm-5 {
+  padding-top: 20px;
+}
+
+#work-single h2 {
+  text-align: center;
+  font-family: Branding-Medium;
+}
+
+#work-single h4 {
+  font-size: 22px;
+  font-family: Branding-Medium;
+  color: #2994A4;
+  text-align: center;
+}
+
+#work-single hr {
+  width: 300px;
+  border-color: #333;
+}
+
+#work-single .splash {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+#work-single .description {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  filter: grayscale(100%);
+}
+
+#work-single .description h2 {
+  margin: 3.5em auto;
+  font-size: 36px;
+}
+
+#work-single .description h4 {
+  margin: 1em auto;
+}
+
+#work-single .responsive {
+  margin: 0 auto;
+  display: block;
+  position: relative;
+}
+
+#work-single a p{
+  font-size: 24px;
+  text-align: center;
+  margin: 0 auto 3.5em auto;
+}
+/*========================= Services Styles ===============================*/
+
+.services {
+  position: absolute;
+  left: 10px;
+  bottom: 5px;
+  width: 50%;
+}
+
+.services span {
+  display: block;
+}
+
+.services span::before{
+  width: 15px;
+  height: 15px;
+  background-color: #333;
+  border-radius: 100%;
+  content: '';
+  display: inline-block;
+  margin-right: 5px;
+  position: relative;
+  top: 3px;
+}
+
+.services .branding::before {
+  background-color: #2994A4;
+}
+
+.services .custom::before {
+  background-color: #FFD36D;
+}
+
+.services .ecommerce::before {
+  background-color: #50D567;
+}
+
+.services .site-builder::before {
+  background-color: #A84DC2;
+}
+
+.services p {
+  margin: 0;
+  font-size: 18px;
+  display: inline-block;
+}
+
+#ourServices {
+  text-align: center;
+}
+
+#ourServices div {
+  display: inline-block;
+  padding: 7px 10px;
+  transition: all .5s ease;
+  margin: 10px;
+  width: 176px;
+}
+
+#ourServices div:hover {
+  cursor: pointer;
+}
+
+#ourServices h3 {
+  margin: 0;
+  font-family: Branding-Medium;
+}
+
+#ourServices .branding {
+  background-color: #2994A4;
+  color: #fff;
+  border: 1px solid #2994A4;
+}
+
+#ourServices .branding:hover, #ourServices .branding.clicked {
+  color: #2994A4;
+  background-color: #fff;
+}
+
+#ourServices .custom{
+  background-color: #FFD36D;
+  color: #fff;
+  border: 1px solid #FFD36D;
+}
+
+#ourServices .custom:hover, #ourServices .custom.clicked {
+  color: #FFD36D;
+  background-color: #fff;
+}
+
+#ourServices .all{
+  background-color: #BB2A2D;
+  color: #fff;
+  border: 1px solid #BB2A2D;
+  padding: 7px 21px;
+}
+
+#ourServices .all:hover, #ourServices .all.clicked {
+  color: #BB2A2D;
+  background-color: #fff;
+}
+
+#ourServices .ecommerce{
+  background-color: #50D567;
+  color: #fff;
+  border: 1px solid #50D567;
+  padding: 7px 21px;
+}
+
+#ourServices .ecommerce:hover, #ourServices .ecommerce.clicked {
+  color: #50D567;
+  background-color: #fff;
+}
+
+#ourServices .site-builder{
+  background-color: #A84DC2;
+  color: #fff;
+  border: 1px solid #A84DC2;
+  padding: 7px 21px;
+}
+
+#ourServices .site-builder:hover, #ourServices .site-builder.clicked {
+  color: #A84DC2;
+  background-color: #fff;
+}
+
+
+/*========================= Contact Styles ===============================*/
+#contact {
+  min-height: 100vh;
+  background-color: #000;
+  padding: 50px;
+}
+
+#contact h1 {
+  /* Email: */
+  font-family: Branding-Black;
+  font-size: 48px;
+  color: #2994A4;
+  text-transform: uppercase;
+}
+
+#contact h2 {
+  /* Tell us what is on y: */
+  font-family: Branding-Bold;
+  font-size: 30px;
+  color: #2994A4;
+}
+
+#contact p {
+  /* connect@ichorstudios: */
+  font-family: Branding-Medium;
+  font-size: 24px;
+  color: #FFD36D;
+}
+
+#contact i {
+  color: #FFD36D;
+  padding: 5px;
   transition: all .3s ease;
 }
-.bg-square {
-  width: 40%;
-  height: 90vh;
-  float: right;
+
+#contact i:hover {
+  color: #2994A4;
 }
 
-.bg-square img {
-  height: 100%;
-  width: auto;
+.section {
+  margin: 20px 0;
 }
 
-.sm-square {
-  width: 20%;
-  height: 45vh;
-}
-
-.sm-square img {
-  width: 100%;
-  height: 100%;
-}
-
-.rectangle {
-  width: 60%;
-  height: 45vh;
-}
-
-.rectangle img {
-  width: 100%;
-  top: 0;
-  transform: translate(-50%, 0);
-}
-
-.portfolioModal {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  position: absolute;
-  top: 0;
-  left: -100%;
-  z-index: 100;
-  background-color: #fff;
-  overflow: hidden;
-}
-
-.portfolioModal img {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -40%);
-}
-
-.portfolioModal .col-sm-7 {
-  padding: 0;
-}
-
-.portfolioModal .col-sm-5 {
-  height: 100%;
-  padding: 30px;
-  overflow-y: scroll;
-}
-
-.portfolioModal button {
-  position: absolute;
-  z-index: 101;
-  top: 10px;
-  right: 10px;
-}
-
-.portfolioModal h2 {
-  text-align: center;
+.button {
   font-family: Branding-Bold;
-  font-size: 36px;
-  color: #333333;
+  font-size: 15px;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  background-color: #000;
+  padding: 5px 10px;
 }
 
-.portfolioModal p {
-  font-family: Branding-Medium;
-  font-size: 16px;
-  color: #4A4A4A;
-  line-height: 27px;
+#email {
+  margin-bottom: 50px;
 }
 
-.portfolioModal a {
-  text-align: center;
-  font-family: Branding-Medium;
+#email input {
+  border: none;
+  border-bottom: 1px solid #FFFFFF;
+  font-family: Branding-Semilight;
   font-size: 18px;
-  color: #BB2A2D;
-  line-height: 27px;
-  margin: 30px auto;
-  display: block;
-  text-decoration: underline;
+  color: rgba(255,255,255,0.60);
+  background-color: transparent;
+  width: 300px;
 }
 
-.portfolioModal h4 {
-  font-family: Branding-Semibold;
-  font-size: 22px;
-  color: #4A4A4A;
+#messager input{
+  padding: 5px;
+  width: 100%;
+  /* Name: */
+  font-family: Branding-Medium;
+  font-size: 20px;
+  color: #333333;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
+
+#messager textarea {
+  width: 100%;
+  font-family: Branding-Medium;
+  font-size: 20px;
+  color: #333333;
+  margin-bottom: 15px;
+}
+
 
 
 /*========================= Footer Styles ===============================*/
+body {
+  position: relative;
+  padding-bottom: 50px;
+  min-height: 100vh;
+}
+
 footer {
-  background-color: #BB2A2D;
+  background: linear-gradient(to right, #FF1E1E, #AE2C31);
   min-height: 50px;
   color: #fff;
   padding: 10px;
-  float: left;
   width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 
 footer #icons {
   float: left;
   font-size: 24px;
+}
+
+footer #icons a {
+  color: #fff;
+  transition: all .3s ease;
+}
+
+footer #icons a:hover {
+  color: #2994A4;
 }
 
 footer #copyright {
@@ -900,4 +1213,68 @@ footer #copyright {
 
 #copyright p {
   margin: 0;
+}
+
+
+
+
+
+#admin {
+  padding: 20px 0;
+}
+
+.nav-pills {
+  padding: 0;
+}
+
+.nav-pills li {
+  max-width: 100%;
+  padding-left: 10px;
+}
+
+.nav-pills li a {
+  font-family: Branding-Medium;
+  font-size: 22px;
+  border-radius: 0 !important;
+  color: #333;
+}
+
+.nav-pills > li.active > a {
+  background-color: #ddd !important;
+  color: #333 !important;
+}
+
+.list {
+  padding: 20px 0 !important;
+}
+
+.nav-pills li {
+  width: 100%;
+}
+
+#photoModal img, #photoOpenModal img {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+
+.currentPhoto {
+  border: 5px solid #ccc;
+  width: 110px !important;
+  height: 110px !important;
+  margin: 5px !important;
+}
+
+.edit-form {
+  border-left: 1px solid #ccc;
+  min-height:100vh;
+  padding: 10px 50px;
+}
+
+.nav-tabs li {
+  font-family: Branding-Medium;
+  font-size: 18px;
+}
+.nav-tabs li a {
+  color: #333;
 }

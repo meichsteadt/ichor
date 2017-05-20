@@ -1,43 +1,43 @@
-<div class="row">
-  <div class="col-md-3">
-    <ul class="nav nav-pills">
-      <li [class.active]="activePost(blankPost)" (click)="setPost(blankPost)" (click)="setAction('new')" role="presentation"><a>New Post</a></li>
-    </ul>
-    <ul *ngFor="let post of blogPosts | async" class="nav nav-pills">
-      <li [class.active]="activePost(post)" (click)="setPost(post)" (click)="setAction('update')" role="presentation"><a>{{post.title}}</a></li>
-    </ul>
-  </div>
-  <div *ngIf="currentPost">
-    <div class="col-md-9" style="border-left: 1px solid #ccc; min-height:100vh;">
-      <h1 class="text-center">{{currentAction}} Blog Post</h1>
-      <hr>
-        <br>
-        <div class="form-group">
-          <label>Title</label>
-          <input [(ngModel)]="currentPost.title" type="text" class="form-control">
-        </div>
-        <div class="form-group">
-          <label>Text</label>
-          <textarea [(ngModel)]="currentPost.content" rows="8" cols="80" class="form-control"></textarea>
-        </div>
-        <markdown [data]="currentPost.content"></markdown>
-        <div class="form-group">
-          <label>Image URL</label>
-          <button class="btn btn-default" style="margin-bottom: 10px;" data-toggle="modal" data-target="#imageModal">Edit Image</button>
-          <input [(ngModel)]="currentPost.image" type="text" class="form-control" disabled>
-        </div>
-        <div *ngIf="currentAction === 'update'">
-          <button class="btn btn-info" (click)="updatePost(currentPost)">Update</button>
-          <button class="btn btn-danger" (click)="deletePost(currentPost)">Delete</button>
-        </div>
-        <div *ngIf="currentAction === 'new'">
-          <button class="btn-default btn" (click)="newPost(currentPost)">Add</button>
-        </div>
-    </div>
+<div class="col-sm-3 list">
+  <ul class="nav nav-pills">
+    <li [class.active]="activePost(blankPost)" (click)="setPost(blankPost)" (click)="setAction('new')" role="presentation"><a>New Post</a></li>
+    <li *ngFor="let post of blogPosts | async" [class.active]="activePost(post)" (click)="setPost(post)" (click)="setAction('update')" role="presentation"><a>{{post.title}}</a></li>
+  </ul>
+</div>
+<div *ngIf="currentPost">
+  <div class="col-sm-9 edit-form">
+    <h1 class="text-center">{{currentAction}} Blog Post</h1>
+    <hr>
+      <br>
+      <div class="form-group">
+        <label>Title</label>
+        <input [(ngModel)]="currentPost.title" type="text" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <input [(ngModel)]="currentPost.description" type="text" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Text</label>
+        <textarea [(ngModel)]="currentPost.content" rows="8" cols="80" class="form-control"></textarea>
+      </div>
+      <markdown [data]="currentPost.content"></markdown>
+      <div class="form-group">
+        <label>Image URL</label>
+        <button class="btn btn-default" style="margin-bottom: 10px;" data-toggle="modal" data-target="#photoModal">Edit Image</button>
+        <input [(ngModel)]="currentPost.image" type="text" class="form-control" disabled>
+      </div>
+      <div *ngIf="currentAction === 'update'">
+        <button class="btn btn-info" (click)="updatePost(currentPost)">Update</button>
+        <button class="btn btn-danger" (click)="deletePost(currentPost)">Delete</button>
+      </div>
+      <div *ngIf="currentAction === 'new'">
+        <button class="btn-default btn" (click)="newPost(currentPost)">Add</button>
+      </div>
   </div>
 </div>
 
-<div id="imageModal" class="modal fade" role="dialog">
+<div id="photoModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">

@@ -30,6 +30,10 @@ import { ContactComponent } from './contact/contact.component';
 import { ServiceComponent } from './service/service.component';
 import { HomeComponent } from './home/home.component';
 import {CategoryPipe } from './category.pipe';
+import { WorkComponent } from './work/work.component';
+import { WorkSingleComponent } from './work-single/work-single.component';
+import { TruncatePipe } from './truncate.pipe';
+import { ServicePipe } from './service.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -64,7 +68,11 @@ const firebaseAuthConfig = {
     ContactComponent,
     ServiceComponent,
     HomeComponent,
-    CategoryPipe
+    CategoryPipe,
+    WorkComponent,
+    WorkSingleComponent,
+    TruncatePipe,
+    ServicePipe
   ],
   imports: [
     BrowserModule,

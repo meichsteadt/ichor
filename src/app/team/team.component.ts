@@ -33,7 +33,7 @@ export class TeamComponent implements OnInit {
   hover($event, member) {
     let id  = member.toLowerCase();
     let alt = document.getElementById(id+ '-alt');
-    let div = document.getElementById(id);
+    let div = $event.srcElement;
     let direction = this.getDir(div, { x : $event.pageX, y : $event.pageY })
     let delay;
     let transition = "all .3s ease";
@@ -94,8 +94,8 @@ export class TeamComponent implements OnInit {
   unhover($event, member) {
     let id  = member.toLowerCase();
     let alt = document.getElementById(id+ '-alt');
-    let div = document.getElementById(id);
-    let direction = this.getDir(div, { x : $event.pageX, y : $event.pageY })
+    let div = $event.srcElement;
+    let direction = this.getDir(div, { x : $event.pageX, y : $event.pageY });
     if(direction === 0) {
       alt.style.top = "-110%";
     }

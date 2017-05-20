@@ -1,21 +1,16 @@
 <div id="blog" class="clearfix">
-  <h1>Blog</h1>
-  <p>Sneak peek at Ichor Studios, recent news about web design and web development, marketing strategies for small businesses, and more.</p>
-  <div class="posts">
-    <div class="post col-md-4" *ngFor="let post of posts | async | category:currentCategory " (click)="goToPost(post)">
-      <img src="{{post.image}}" alt="{{post.title}}" class="img-responsive">
-      <div class="postContent">
-        <h4>{{post.title}}</h4>
+  <div *ngFor="let post of posts | async | category:currentCategory" class="post">
+    <div class="row">
+      <div class="col-xs-12">
+        <img (click)="goToPost(post)" src="{{post.image}}" alt="{{post.title}}" class="img-responsive">
+        <div class="col-xs-8 col-xs-offset-2 text-center">
+          <h4>{{post.date}}</h4>
+          <hr>
+          <h1 (click)="goToPost(post)" class="title">{{post.title}}</h1>
+          <p>{{post.description | truncate}}</p>
+          <button (click)="goToPost(post)" class="button">Read full article</button>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="categories col-md-4 pull-right">
-    <h4>Categories</h4>
-    <ul>
-      <li class="link" (click)="setCategory('all')">View All</li>
-      <li class="link" *ngFor="let category of categories | async" (click)="setCategory(category.$value)">
-        {{category.$value}}
-      </li>
-    </ul>
   </div>
 </div>

@@ -1,0 +1,15 @@
+<div id="work-single" class="clearfix">
+  <div class="col-sm-12 splash">
+    <div class="description">
+      <h4>{{(portfolioItem | async)?.client}}</h4>
+      <hr>
+      <h2>{{(portfolioItem | async)?.description}}</h2>
+    </div>
+  </div>
+  <a href="{{(portfolioItem | async)?.url}}" target="_blank">
+    <img class="responsive img-responsive" src="{{(portfolioItem | async)?.photoOpen}}" alt="">
+    <p>View their Website</p>
+  </a>
+  <h4>Client Review:</h4>
+  <p>{{(portfolioItem | async)?.review}}</p>
+</div>

@@ -10,10 +10,11 @@ import { AngularFire, FirebaseListObservable, FirebaseApp } from 'angularfire2';
 export class EditPortfolioItemComponent implements OnInit {
   portfolioItems: FirebaseListObservable<any[]>;
   photos: FirebaseListObservable<any[]>;
-  blankItem: PortfolioItem = new PortfolioItem('','','','','');
+  blankItem: PortfolioItem = new PortfolioItem('','','','','', '', {'custom site': false, 'branding': false, 'ecommerce': false, 'site-builder': false});
   currentItem: PortfolioItem = this.blankItem;
   currentAction: string = 'new';
   currentPhoto;
+  currentOpenPhoto;
   currentFile;
   firebaseRef;
 
@@ -31,6 +32,7 @@ export class EditPortfolioItemComponent implements OnInit {
   setItem(item) {
     this.currentItem = item;
     this.currentPhoto = item.photo
+    this.currentOpenPhoto = item.photoOpen
   }
 
   setAction(action){
@@ -41,8 +43,12 @@ export class EditPortfolioItemComponent implements OnInit {
     this.currentPhoto = photo.url;
   }
 
+  setOpenPhoto(photo) {
+    this.currentOpenPhoto = photo.url;
+  }
+
   resetItem() {
-    this.blankItem = new PortfolioItem('','','','','');
+    this.blankItem = new PortfolioItem('','','','','', '', {'custom site': false, 'branding': false, 'ecommerce': false, 'site-builder': false});
     this.currentItem = this.blankItem;
   }
 
@@ -62,12 +68,15 @@ export class EditPortfolioItemComponent implements OnInit {
 
   updateItem(itemToUpdate) {
     var itemInFirebase = this.getItemByID(itemToUpdate.$key);
+    this.setServices(itemToUpdate)
     itemInFirebase.update({
       client: itemToUpdate.client,
       review: itemToUpdate.review,
       description: itemToUpdate.description,
       photo: itemToUpdate.photo,
       url: itemToUpdate.url,
+      services: itemToUpdate.services,
+      photoOpen: itemToUpdate.photoOpen
     })
   }
 
@@ -97,12 +106,21 @@ export class EditPortfolioItemComponent implements OnInit {
     }
   }
 
+  activeOpenPhoto(photo) {
+    if(photo.url === this.currentOpenPhoto) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
   uploadFile() {
     let url;
     if(this.currentFile) {
       let name = this.currentFile.name;
-      this.firebaseRef.child(name).put(this.currentFile)
-      .then(a => this.firebaseRef.child(name).getDownloadURL()
+      this.firebaseRef.child('images/portfolio/' + name).put(this.currentFile)
+      .then(a => this.firebaseRef.child('images/portfolio/' + name).getDownloadURL()
         .then(url => this.angularFire.database.list('images/portfolio').push({ url: url, name: name}))
       )
     }
@@ -112,4 +130,24 @@ export class EditPortfolioItemComponent implements OnInit {
     this.currentItem.photo = this.currentPhoto;
   }
 
+  selectOpenPhoto() {
+    this.currentItem.photoOpen = this.currentOpenPhoto;
+  }
+
+  setServices(item) {
+    if(item.services[0]) {
+      item.services[0] = 'custom site'
+    }
+    if(item.services[1]) {
+      item.services[1] = 'branding'
+    }
+    if(item.services[2]) {
+      item.services[2] = 'ecommerce'
+    }
+    for(let i=item.services.length-1; i>0; i--) {
+      if(!item.services[i]) {
+        item.services.splice(i,1)
+      }
+    }
+  }
 }

@@ -1,35 +1,38 @@
 <div id="messager">
   <h2>Get in touch!</h2>
-  <form>
+  <form (ngSubmit)="submit(name.value, company.value, phone.value, email.value, referal.value, message.value, budget.value)" #messageForm="ngForm">
     <div class="form-group">
       <div class="col-sm-6">
-        <input type="text" placeholder="name" #name>
+        <input type="text" placeholder="name" #name required>
       </div>
       <div class="col-sm-6">
-        <input type="text" placeholder="company" #company>
+        <input type="text" placeholder="company" #company required>
       </div>
     </div>
     <div class="form-group">
       <div class="col-sm-6">
-        <input type="text" placeholder="phone" #phone>
+        <input type="text" placeholder="phone" #phone required>
       </div>
       <div class="col-sm-6">
-        <input type="text" placeholder="email" #email>
+        <input type="text" placeholder="email" #email required>
       </div>
     </div>
     <div class="form-group">
       <div class="col-sm-6">
-        <input type="text" placeholder="how did you hear about us" #referal>
+        <input type="text" placeholder="how did you hear about us" #referal required>
+      </div>
+      <div class="col-sm-6">
+        <input type="text" placeholder="estimated budget" #budget required>
       </div>
       <div class="clearfix"></div>
     </div>
     <div class="form-group">
       <div class="col-sm-12">
-        <textarea rows="4" placeholder="message" #message></textarea>
+        <textarea rows="4" placeholder="message" #message required></textarea>
       </div>
     </div>
     <div class="col-sm-12">
-      <button class="button right" (click)="submit(name.value, company.value, phone.value, email.value, referal.value, message.value)">Submit</button>
+      <button [disabled]="!messageForm.form.valid" class="button right" type="submit">Submit</button>
     </div>
   </form>
 </div>

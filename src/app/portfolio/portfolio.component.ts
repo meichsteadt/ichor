@@ -17,7 +17,7 @@ export class PortfolioComponent implements OnInit {
     if(position === 0) {
       return 'portfolio rectangle'
     }
-    else if (position === 1 || position === 5 || position === 10) {
+    else if (position === 1 || position % 5 === 0 ) {
       return 'portfolio bg-square'
     }
     else {
@@ -43,14 +43,12 @@ export class PortfolioComponent implements OnInit {
     delay = setTimeout(function(){
       div.style.transition = transition;
       div.style.left = "0";
+      document.getElementById('portfolio').style.paddingTop = "0";
     }, 0)
-    fade = setTimeout(function(){
-      document.getElementById('portfolio').style.display = "none";
-    }, 1000)
   }
 
   hideModal(id) {
-    document.getElementById('portfolio').style.display = "block";
+    document.getElementById('portfolio').style.paddingTop = "101px";
     let div = document.getElementById(id)
     div.style.transition = "all .5s";
     div.style.left = "100%";

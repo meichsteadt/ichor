@@ -22,11 +22,13 @@ export class EmailComponent implements OnInit {
     let headers = new Headers({ 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': true });
     let options = new RequestOptions({ headers: headers });
     let body = {"email_address": btoa(email), "key": btoa(mailChimp.serverKey), "password": btoa(mailChimp.serverPassword)}
-    this.http.post("http://localhost:3000/mailchimp", body, options).subscribe(a => console.log(this.extractData(a)))
+    this.http.post("https://ichor-mail.herokuapp.com/mailchimp", body, options).catch(this.handleError).subscribe(a => console.log(this.extractData(a)))
   }
 
   private extractData(res: Response) {
     let body = res.json();
+    document.getElementById('emailForm').style.display = "none";
+    document.getElementById('emailSuccess').style.display = "block";
     return  body.data || { };
   }
 
@@ -40,6 +42,9 @@ export class EmailComponent implements OnInit {
     } else {
       errMsg = error.message ? error.message : error.toString();
     }
+    document.getElementById('emailSuccess').innerHTML = "<h4  class='flash-message'>There was a problem signing you up. This email may already be on our mailing list</h4>";
+    document.getElementById('emailForm').style.display = "none";
+    document.getElementById('emailSuccess').style.display = "block";
     console.error(errMsg);
     return Observable.throw(errMsg);
   }

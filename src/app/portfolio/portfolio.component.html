@@ -1,11 +1,9 @@
-<div id="portfolio" class="clearfix">
-  <div *ngIf="currentRoute !== '/admin'">
-    <div class="portfolioItem" *ngFor="let item of portfolioItems | async; let i = index" [class]="setClass(i)">
-      <a (click)="showModal(item.$key)">
-        <img src="{{item.photo}}" alt="{{item.client}}">
-      </a>
-      <div class="clearfix"></div>
-    </div>
+<!-- <div id="portfolio" class="clearfix">
+  <div class="portfolioItem" *ngFor="let item of portfolioItems | async; let i = index" [class]="setClass(i)">
+    <a (click)="showModal(item.$key)">
+      <img src="{{item.photo}}" alt="{{item.client}}">
+    </a>
+    <div class="clearfix"></div>
   </div>
 </div>
 
@@ -21,4 +19,4 @@
     <h4>Client Review:</h4>
     <p>{{item.review}}</p>
   </div>
-</div>
+</div> -->

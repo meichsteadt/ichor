@@ -1,0 +1,38 @@
+<div id="work" class="clearfix">
+  <div id="ourServices">
+    <div [class.clicked]="activeService('all')" (click)="setService('all')" class="all">
+      <h3>All</h3>
+    </div>
+    <div [class.clicked]="activeService('branding')" (click)="setService('branding')" class="branding">
+      <h3>Branding</h3>
+    </div>
+    <div [class.clicked]="activeService('custom site')" (click)="setService('custom site')" class="custom">
+      <h3>Custom Site</h3>
+    </div>
+    <div [class.clicked]="activeService('ecommerce')" (click)="setService('ecommerce')" class="ecommerce">
+      <h3>Ecommerce</h3>
+    </div>
+    <div [class.clicked]="activeService('site-builder')" (click)="setService('site-builder')" class="site-builder">
+      <h3>Site-Builder</h3>
+    </div>
+  </div>
+  <div *ngFor="let item of portfolioItems | async | service:currentService" class="portfolio-item col-md-4 col-sm-6">
+    <div class="panel panel-default portfolio-panel">
+      <div class="panel-heading">
+        <img src="{{item.photo}}" class="img-responsive" alt="">
+      </div>
+      <div class="panel-body">
+        <h2>{{item.client}}</h2>
+        <p>{{item.review | truncate}}</p>
+        <p (click)="goToItem(item)" class="more">See whole story >></p>
+        <div class="services">
+          <div *ngFor="let service of services">
+            <span *ngIf="checkService(item, service)" class="{{service}}">
+              <p>{{service}}</p>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

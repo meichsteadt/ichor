@@ -1,53 +1,68 @@
-<div class="row">
-  <div class="col-md-3">
-    <ul class="nav nav-pills">
-      <li [class.active]="activeItem(blankItem)" (click)="setItem(blankItem)" (click)="setAction('new')" role="presentation"><a>New Portfolio Item</a></li>
-    </ul>
-    <ul *ngFor="let item of portfolioItems | async" class="nav nav-pills">
-      <li [class.active]="activeItem(item)" (click)="setItem(item)" (click)="setAction('update')" role="presentation"><a>{{item.client}}</a></li>
-    </ul>
-  </div>
-  <div *ngIf="currentItem">
-    <div class="col-md-9" style="border-left: 1px solid #ccc; min-height:100vh;">
-      <h1 class="text-center">{{currentAction}} Portfolio Item</h1>
-      <hr>
-      <div id="portfolioForm" class="form col-md-6">
-        <br>
-        <div class="form-group">
-          <label>Client</label>
-          <input [(ngModel)]="currentItem.client" type="text" class="form-control">
-        </div>
-        <div class="form-group">
-          <label>Review</label>
-          <textarea [(ngModel)]="currentItem.review" rows="8" cols="80" class="form-control"></textarea>
-        </div>
-        <div class="form-group">
-          <label>Description</label>
-          <textarea [(ngModel)]="currentItem.description" rows="8" cols="80" class="form-control"></textarea>
-        </div>
-        <div class="form-group">
-          <label>Photo URL</label>
-          <button class="btn btn-default" style="margin-bottom: 10px;" data-toggle="modal" data-target="#photoModal">Edit Photo</button>
-          <input [(ngModel)]="currentItem.photo" type="text" class="form-control" disabled>
-        </div>
-        <div class="form-group">
-          <label>Webiste URL</label>
-          <input [(ngModel)]="currentItem.url" type="text" class="form-control">
-        </div>
-        <div *ngIf="currentAction === 'update'">
-          <button class="btn btn-info" (click)="updateItem(currentItem)">Update</button>
-          <button class="btn btn-danger" (click)="deleteItem(currentItem)">Delete</button>
-        </div>
-        <div *ngIf="currentAction === 'new'">
-          <button class="btn-default btn" (click)="newItem(currentItem)">Add</button>
-        </div>
+<div class="col-sm-3 list">
+  <ul class="nav nav-pills">
+    <li [class.active]="activeItem(blankItem)" (click)="setItem(blankItem)" (click)="setAction('new')" role="presentation"><a>New Portfolio Item</a></li>
+    <li *ngFor="let item of portfolioItems | async" [class.active]="activeItem(item)" (click)="setItem(item)" (click)="setAction('update')" role="presentation"><a>{{item.client}}</a></li>
+  </ul>
+</div>
+<div *ngIf="currentItem">
+  <div class="col-sm-9 edit-form">
+    <h1 class="text-center">{{currentAction}} Portfolio Item</h1>
+    <hr>
+    <div id="portfolioForm" class="form col-md-6">
+      <br>
+      <div class="form-group">
+        <label>Client</label>
+        <input [(ngModel)]="currentItem.client" type="text" class="form-control">
       </div>
-      <div id="portfolioItem" class="col-md-6">
-        <h4>{{currentItem.client}}</h4>
-        <p>{{currentItem.description}}</p>
-        <img src="{{currentItem.photo}}" alt="{{currentItem.client}}" style="max-width:400px;max-height:400px;">
-        <p>{{currentItem.review}}</p>
+      <div class="form-group">
+        <label>Review</label>
+        <textarea [(ngModel)]="currentItem.review" rows="8" cols="80" class="form-control"></textarea>
       </div>
+      <div class="form-group">
+        <label>Description</label>
+        <textarea [(ngModel)]="currentItem.description" rows="8" cols="80" class="form-control"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Photo URL</label>
+        <button class="btn btn-default" style="margin-bottom: 10px;" data-toggle="modal" data-target="#photoModal">Edit Photo</button>
+        <input [(ngModel)]="currentItem.photo" type="text" class="form-control" disabled>
+      </div>
+      <div class="form-group">
+        <label>Website Photo URL</label>
+        <button class="btn btn-default" style="margin-bottom: 10px;" data-toggle="modal" data-target="#photoOpenModal">Edit Photo</button>
+        <input [(ngModel)]="currentItem.photoOpen" type="text" class="form-control" disabled>
+      </div>
+      <div class="form-group">
+        <label>Webiste URL</label>
+        <input [(ngModel)]="currentItem.url" type="text" class="form-control">
+      </div>
+      <div class="form-group">
+        <input type="checkbox" [(ngModel)]="currentItem.services['custom site']" name="custom site" value="custom site">
+        <label for="custom-site">Custom Site</label>
+        <input type="checkbox" [(ngModel)]="currentItem.services['branding']" name="branding" value="branding">
+        <label for="branding">Branding</label>
+        <input type="checkbox" [(ngModel)]="currentItem.services['ecommerce']" name="ecommerce" value="ecommerce">
+        <label for="ecommerce">Ecommerce</label>
+        <input type="checkbox" [(ngModel)]="currentItem.services['site-builder']" name="site-builder" value="site-builder">
+        <label for="ecommerce">Site-Builder</label>
+      </div>
+      <div *ngIf="currentAction === 'update'">
+        <button class="btn btn-info" (click)="updateItem(currentItem)">Update</button>
+        <button class="btn btn-danger" (click)="deleteItem(currentItem)">Delete</button>
+      </div>
+      <div *ngIf="currentAction === 'new'">
+        <button class="btn-default btn" (click)="newItem(currentItem)">Add</button>
+      </div>
+    </div>
+    <div id="portfolioItem" class="col-md-6">
+      <h4>{{currentItem.client}}</h4>
+      <img src="{{currentItem.photo}}" alt="{{currentItem.client}}" style="max-width:400px;max-height:400px;">
+      <h5>Description: </h5>
+      <p>{{currentItem.description}}</p>
+      <h5>Client Review:</h5>
+      <p>{{currentItem.review}}</p>
+      <h5>Website Photo</h5>
+      <img src="{{currentItem.photoOpen}}" alt="" style="max-width:400px;max-height:400px;">
     </div>
   </div>
 </div>
@@ -69,6 +84,28 @@
       </div>
       <div class="modal-footer">
         <button class="btn btn-info" data-dismiss="modal" (click)="selectPhoto()">Select Photo</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="photoOpenModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Portfolio Photo</h4>
+      </div>
+      <div class="modal-body">
+          <img *ngFor="let photo of photos | async" src="{{photo.url}}" alt="{{photo.name}}" class="editPhoto" [class.currentPhoto]="activeOpenPhoto(photo)" (click)="setOpenPhoto(photo)">
+        <div class="form-group">
+          <label>Upload photo</label>
+          <input type="file" (change)="onChange($event)" id="file">
+        </div>
+        <button class="btn btn-success" (click)="uploadFile()">Upload Photo</button>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-info" data-dismiss="modal" (click)="selectOpenPhoto()">Select Photo</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>

@@ -1,7 +1,10 @@
 <div id="email">
   <h1>Stay Up to Date</h1>
-  <form>
-    <input placeholder="Enter Email Address" type="email" #email>
-    <button (click)="add(email.value)" class="button">Sign Up</button>
+  <form id="emailForm" (ngSubmit)="add(email.value); email.value='';">
+    <input placeholder="Enter Email Address" type="email" #email required>
+    <button  class="button">Sign Up</button>
   </form>
+  <div id="emailSuccess" style="display: none;">
+    <h4 class='flash-message'>You've successfully signed up</h4>
+  </div>
 </div>

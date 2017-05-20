@@ -63,12 +63,11 @@ export class EditBlogComponent implements OnInit {
 
   updatePost(postToUpdate) {
     var postInFirebase = this.getPostByID(postToUpdate.$key);
-    console.log(postToUpdate.$key)
       postInFirebase.update({
       title: postToUpdate.title,
       content: postToUpdate.content,
       image: postToUpdate.image,
-      categories: postToUpdate.categories,
+      description: postToUpdate.description
     })
   }
 
@@ -102,8 +101,8 @@ export class EditBlogComponent implements OnInit {
     let url;
     if(this.currentFile) {
       let name = this.currentFile.name;
-      this.firebaseRef.child(name).put(this.currentFile)
-      .then(a => this.firebaseRef.child(name).getDownloadURL()
+      this.firebaseRef.child('images/blog' + name).put(this.currentFile)
+      .then(a => this.firebaseRef.child('images/blog' + name).getDownloadURL()
         .then(url => this.angularFire.database.list('images/blog').push({ url: url, name: name}))
       )
     }

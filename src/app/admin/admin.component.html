@@ -1,20 +1,22 @@
-<ul class="nav nav-tabs">
-  <li [class.active]="activeSection('team')" role="presentation" (click)="currentSection = 'team'"><a>Team</a></li>
-  <li [class.active]="activeSection('portfolio')" role="presentation" (click)="currentSection = 'portfolio'"><a>Portfolio</a></li>
-  <li [class.active]="activeSection('blog')" role="presentation" (click)="currentSection = 'blog'"><a>Blog</a></li>
-</ul>
-<div *ngIf="currentSection === 'team'" id="team">
-  <div class="row">
-    <app-edit-member></app-edit-member>
+<div id="admin">
+  <ul class="nav nav-tabs">
+    <li [class.active]="activeSection('team')" role="presentation" (click)="currentSection = 'team'"><a>Team</a></li>
+    <li [class.active]="activeSection('portfolio')" role="presentation" (click)="currentSection = 'portfolio'"><a>Portfolio</a></li>
+    <li [class.active]="activeSection('blog')" role="presentation" (click)="currentSection = 'blog'"><a>Blog</a></li>
+  </ul>
+  <div *ngIf="currentSection === 'team'" id="editTeam">
+    <div class="row">
+      <app-edit-member></app-edit-member>
+    </div>
   </div>
-</div>
-<div *ngIf="currentSection === 'portfolio'" id="portfolio">
-  <div class="row">
-    <app-edit-portfolio-item></app-edit-portfolio-item>
+  <div *ngIf="currentSection === 'portfolio'" id="editPortfolio">
+    <div class="row">
+      <app-edit-portfolio-item></app-edit-portfolio-item>
+    </div>
   </div>
-</div>
-<div *ngIf="currentSection === 'blog'" id="blog">
-  <div class="row">
-    <app-edit-blog></app-edit-blog>
+  <div *ngIf="currentSection === 'blog'" id="editBlog">
+    <div class="row">
+      <app-edit-blog></app-edit-blog>
+    </div>
   </div>
 </div>

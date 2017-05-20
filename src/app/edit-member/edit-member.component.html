@@ -1,44 +1,44 @@
-<div class="row">
-  <div class="col-md-3">
-    <ul class="nav nav-pills">
-      <li [class.active]="activeMember(blankMember)" (click)="setMember(blankMember)" (click)="setAction('new')" role="presentation"><a>New Team Member</a></li>
-    </ul>
-    <ul *ngFor="let member of members | async" class="nav nav-pills">
-      <li [class.active]="activeMember(member)" (click)="setMember(member)" (click)="setAction('update')" role="presentation"><a>{{member.name}}</a></li>
-    </ul>
-  </div>
-  <div *ngIf="currentMember">
-    <div class="col-md-9" style="border-left: 1px solid #ccc; min-height:100vh;">
-      <h1 class="text-center">{{currentAction}} Team Member</h1>
-      <hr>
-      <div id="form" class="form col-md-6">
-        <br>
-        <div class="form-group">
-          <label>Name</label>
-          <input [(ngModel)]="currentMember.name" type="text" class="form-control">
-        </div>
-        <div class="form-group">
-          <label>Text</label>
-          <textarea [(ngModel)]="currentMember.text" rows="8" cols="80" class="form-control"></textarea>
-        </div>
-        <div class="form-group">
-          <label>Photo URL</label>
-          <button class="btn btn-default" style="margin-bottom: 10px;" data-toggle="modal" data-target="#photoModal">Edit Photo</button>
-          <input [(ngModel)]="currentMember.photo" type="text" class="form-control" disabled>
-        </div>
-        <div *ngIf="currentAction === 'update'">
-          <button class="btn btn-info" (click)="updateMember(currentMember)">Update</button>
-          <button class="btn btn-danger" (click)="deleteMember(currentMember)">Delete</button>
-        </div>
-        <div *ngIf="currentAction === 'new'">
-          <button class="btn-default btn" (click)="newMember(currentMember)">Add</button>
-        </div>
+<div class="col-sm-3 list">
+  <ul class="nav nav-pills">
+    <li [class.active]="activeMember(blankMember)" (click)="setMember(blankMember)" (click)="setAction('new')" role="presentation"><a>New Team Member</a></li>
+    <li *ngFor="let member of members | async" [class.active]="activeMember(member)" (click)="setMember(member)" (click)="setAction('update')" role="presentation"><a>{{member.name}}</a></li>
+  </ul>
+</div>
+<div *ngIf="currentMember">
+  <div class="col-sm-9 edit-form">
+    <h1 class="text-center">{{currentAction}} Team Member</h1>
+    <hr>
+    <div id="form" class="form col-md-6">
+      <br>
+      <div class="form-group">
+        <label>Name</label>
+        <input [(ngModel)]="currentMember.name" type="text" class="form-control">
       </div>
-      <div id="member" class="col-md-6">
-        <h4>{{currentMember.name}}</h4>
-        <p>{{currentMember.text}}</p>
-        <img src="{{currentMember.photo}}" alt="{{currentMember.name}}" style="max-width:400px;max-height:400px;">
+      <div class="form-group">
+        <label>Title</label>
+        <input [(ngModel)]="currentMember.title" type="text" class="form-control">
       </div>
+      <div class="form-group">
+        <label>Text</label>
+        <textarea [(ngModel)]="currentMember.text" rows="8" cols="80" class="form-control"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Photo URL</label>
+        <button class="btn btn-default" style="margin-bottom: 10px;" data-toggle="modal" data-target="#photoModal">Edit Photo</button>
+        <input [(ngModel)]="currentMember.photo" type="text" class="form-control" disabled>
+      </div>
+      <div *ngIf="currentAction === 'update'">
+        <button class="btn btn-info" (click)="updateMember(currentMember)">Update</button>
+        <button class="btn btn-danger" (click)="deleteMember(currentMember)">Delete</button>
+      </div>
+      <div *ngIf="currentAction === 'new'">
+        <button class="btn-default btn" (click)="newMember(currentMember)">Add</button>
+      </div>
+    </div>
+    <div id="member" class="col-md-6">
+      <h4>{{currentMember.name}}, {{currentMember.title}}</h4>
+      <p>{{currentMember.text}}</p>
+      <img src="{{currentMember.photo}}" alt="{{currentMember.name}}" style="max-width:400px;max-height:400px;">
     </div>
   </div>
 </div>

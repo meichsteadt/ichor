@@ -10,7 +10,7 @@ import { firebaseAuthConfig } from '../api-keys';
 })
 export class AdminComponent implements OnInit {
   currentRoute: string = this.router.url
-  currentSection: string = "blog";
+  currentSection: string = "portfolio";
   constructor(private router: Router, private angularFire: AngularFire) {
     this.angularFire.auth.subscribe();
   }

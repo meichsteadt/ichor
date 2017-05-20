@@ -1,0 +1,242 @@
+{
+  "blog" : {
+    "categories" : [ "Ichor", "Web" ],
+    "posts" : [ null, {
+      "categories" : [ "Ichor" ],
+      "content" : "# Occupy kitsch plaid cornhole tattooed sartorial four dollar toast pour-over. Irony tilde retro, messenger bag hammock gluten-free \n_seitan +1 intelligentsia literally. Chicharrones ramps forage, vegan tousled wayfarers franzen. Biodiesel heirloom migas umami cold-_ pressed, knausgaard vinyl marfa affogato iPhone 3 wolf moon waistcoat. Tofu marfa cliche synth gochujang, knausgaard chartreuse. Cardigan cornhole irony, plaid bitters XOXO keffiyeh. Microdosing pop-up 3 wolf moon crucifix sriracha.\n\n![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png \"Logo Title Text 1\")\n",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/ichor-dea55.appspot.com/o/kzc9h88nwpm-dominik-wycislo.jpg?alt=media&token=161a0abc-e558-47df-95b2-9f5a6d75be73",
+      "title" : "Hipster"
+    } ]
+  },
+  "images" : {
+    "blog" : {
+      "0" : {
+        "name" : "hipster",
+        "url" : "https://firebasestorage.googleapis.com/v0/b/ichor-dea55.appspot.com/o/kzc9h88nwpm-dominik-wycislo.jpg?alt=media&token=161a0abc-e558-47df-95b2-9f5a6d75be73"
+      },
+      "-KhOROY0ohHRbIFpMfxt" : {
+        "name" : "Snowboard_eXtreme.jpg",
+        "url" : "https://firebasestorage.googleapis.com/v0/b/ichor-dea55.appspot.com/o/Snowboard_eXtreme.jpg?alt=media&token=f5dc39eb-2091-4afd-a5d6-712f1cd01712"
+      }
+    },
+    "members" : {
+      "-KgqRMNTU0EqC_d4_RWB" : {
+        "name" : "IMG_6355.JPG",
+        "url" : "https://firebasestorage.googleapis.com/v0/b/ichor-dea55.appspot.com/o/IMG_6355.JPG?alt=media&token=29066daf-c621-4cd1-a245-5bcb3828434d"
+      },
+      "-KgqXWw0DLw_vZNqHGRc" : {
+        "name" : "matt.jpg",
+        "url" : "https://firebasestorage.googleapis.com/v0/b/ichor-dea55.appspot.com/o/matt.jpg?alt=media&token=8b627c89-3069-4a91-8e3f-079763cc9795"
+      }
+    },
+    "portfolio" : {
+      "-KgqTZuhJo6ZIcBXxw5G" : {
+        "name" : "IMG_6330.JPG",
+        "url" : "https://firebasestorage.googleapis.com/v0/b/ichor-dea55.appspot.com/o/IMG_6330.JPG?alt=media&token=b033ef24-b676-4121-a6cc-6d9bc2a40630"
+      },
+      "-KgzgMXTXarGFt-_i_n4" : {
+        "name" : "shutterstock_388253872.jpg",
+        "url" : "https://firebasestorage.googleapis.com/v0/b/ichor-dea55.appspot.com/o/shutterstock_388253872.jpg?alt=media&token=3e423a1c-4301-48b3-bed8-7ebb0b46a115"
+      },
+      "-Kgzgb9dK7h-YiXKpNIt" : {
+        "name" : "shutterstock_388253872.jpg",
+        "url" : "https://firebasestorage.googleapis.com/v0/b/ichor-dea55.appspot.com/o/shutterstock_388253872.jpg?alt=media&token=e8d07869-31d7-4bff-8840-bfea3534ac6c"
+      },
+      "-KgzgsDCt4dvGkZ3JZl8" : {
+        "name" : "shutterstock_388253872.jpg",
+        "url" : "https://firebasestorage.googleapis.com/v0/b/ichor-dea55.appspot.com/o/shutterstock_388253872.jpg?alt=media&token=01958a50-5816-4349-8352-123082c76656"
+      },
+      "-Kgzh6sYJzSVCLdzyvAG" : {
+        "name" : "shutterstock_388253872.jpg",
+        "url" : "https://firebasestorage.googleapis.com/v0/b/ichor-dea55.appspot.com/o/shutterstock_388253872.jpg?alt=media&token=67f5ef27-9180-40e5-8d8c-8d09d6ced97a"
+      },
+      "-KgzhArUyxzY_Zg54WSH" : {
+        "name" : "kzc9h88nwpm-dominik-wycislo.jpg",
+        "url" : "https://firebasestorage.googleapis.com/v0/b/ichor-dea55.appspot.com/o/kzc9h88nwpm-dominik-wycislo.jpg?alt=media&token=161a0abc-e558-47df-95b2-9f5a6d75be73"
+      }
+    }
+  },
+  "members" : {
+    "0" : {
+      "altPhoto" : "https://scontent-sjc2-1.xx.fbcdn.net/v/t1.0-9/17343010_184554702048018_6565183088594520156_n.jpg?oh=d47a0e290b6ce0db8e426e07a78dc46d&oe=597B392C",
+      "name" : "Jennifer",
+      "photo" : "http://ichorstudios.com/assets/img/jennifer.png",
+      "text" : "Jennifer founded Ichor Studios in 2014, following a passion, to help small businesses and non-profits in her community. She has a background in business and an eye for technology.",
+      "title" : "Founder and CEO"
+    },
+    "1" : {
+      "altPhoto" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjV2RXFL_--ksg9r4pLbH8s3SQ5g2jGjr03wuJmXGaiKqkQGwzH3p-jm8",
+      "name" : "Sara Joy",
+      "photo" : "https://files.slack.com/files-tmb/T4M4RNG3U-F54AGPCGG-7d63e74ef1/img_8843_720.jpg",
+      "title" : "Frontend Developer"
+    },
+    "2" : {
+      "altPhoto" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjV2RXFL_--ksg9r4pLbH8s3SQ5g2jGjr03wuJmXGaiKqkQGwzH3p-jm8",
+      "name" : "Camille",
+      "photo" : "http://ichorstudios.com/assets/img/camille.png",
+      "title" : "Frontend Developer"
+    },
+    "3" : {
+      "altPhoto" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjV2RXFL_--ksg9r4pLbH8s3SQ5g2jGjr03wuJmXGaiKqkQGwzH3p-jm8",
+      "name" : "Teona",
+      "photo" : "https://images.unsplash.com/photo-1471572399924-a8fc72ed6c7b?dpr=1&auto=compress,format&fit=crop&w=376&h=250&q=80&cs=tinysrgb&crop=&bg=",
+      "title" : "Frontend Developer"
+    },
+    "4" : {
+      "altPhoto" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjV2RXFL_--ksg9r4pLbH8s3SQ5g2jGjr03wuJmXGaiKqkQGwzH3p-jm8",
+      "name" : "Tojo",
+      "photo" : "https://files.slack.com/files-tmb/T4M4RNG3U-F550GQE9Y-9647dc1ff1/tojoa-profile-photo-1_720.jpg",
+      "title" : "Frontend Developer"
+    },
+    "5" : {
+      "altPhoto" : "https://scontent-sjc2-1.xx.fbcdn.net/v/t1.0-9/15220122_1439127906098556_4320550456153581345_n.jpg?oh=e6c5cd55705e613d818f0098f95373c2&oe=594E7D90",
+      "name" : "Matt",
+      "photo" : "https://firebasestorage.googleapis.com/v0/b/ichor-dea55.appspot.com/o/matt.jpg?alt=media&token=8b627c89-3069-4a91-8e3f-079763cc9795",
+      "text" : "Occupy kitsch plaid cornhole tattooed sartorial four dollar toast pour-over. Irony tilde retro, messenger bag hammock gluten-free seitan +1 intelligentsia literally. Chicharrones ramps forage, vegan tousled wayfarers franzen. Biodiesel heirloom migas umami cold-pressed, knausgaard vinyl marfa affogato iPhone 3 wolf moon waistcoat. Tofu marfa cliche synth gochujang, knausgaard chartreuse. Cardigan cornhole irony, plaid bitters XOXO keffiyeh. Microdosing pop-up 3 wolf moon crucifix sriracha.",
+      "title" : "Backend Developer"
+    },
+    "6" : {
+      "altPhoto" : "https://ca.slack-edge.com/T4M4RNG3U-U4PK28MGA-e6dddb6b4d44-512",
+      "name" : "Max",
+      "photo" : "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAj9AAAAJDkzYzhjYzMyLTY5OTAtNDZjYi04NDA1LWUxNGEwOTJmMjFiNQ.jpg",
+      "title" : "Frontend Developer"
+    },
+    "7" : {
+      "altPhoto" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjV2RXFL_--ksg9r4pLbH8s3SQ5g2jGjr03wuJmXGaiKqkQGwzH3p-jm8",
+      "name" : "Amy",
+      "photo" : "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAmzAAAAJDI0MDRkOGJhLWZkODgtNGQ2OS1hNDhhLTI4YjgwYTU4ZjRkYw.jpg",
+      "title" : "Frontend Developer"
+    },
+    "8" : {
+      "altPhoto" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjV2RXFL_--ksg9r4pLbH8s3SQ5g2jGjr03wuJmXGaiKqkQGwzH3p-jm8",
+      "name" : "Momo",
+      "photo" : "http://ichorstudios.com/assets/img/momo.png",
+      "title" : "Frontend Developer"
+    },
+    "9" : {
+      "altPhoto" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjV2RXFL_--ksg9r4pLbH8s3SQ5g2jGjr03wuJmXGaiKqkQGwzH3p-jm8",
+      "name" : "Lilo",
+      "photo" : "http://ichorstudios.com/assets/img/lilo.png",
+      "title" : "Frontend Developer"
+    },
+    "10" : {
+      "altPhoto" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjV2RXFL_--ksg9r4pLbH8s3SQ5g2jGjr03wuJmXGaiKqkQGwzH3p-jm8",
+      "name" : "Tater",
+      "photo" : "https://files.slack.com/files-tmb/T4M4RNG3U-F553QRZJ9-4b7acaed9e/85c88a05-b036-411b-b358-01e18ea647fb_720.jpg",
+      "title" : "Frontend Developer"
+    }
+  },
+  "portfolio" : {
+    "0" : {
+      "client" : "Downtown Barrel Room",
+      "description" : "We're very excited to currently be working on a website for Uptown Barrel Room. We have completed stage one! Check back soon for the stage two finished product.",
+      "photo" : "http://ichorstudios.com/assets/img/ubr.jpg",
+      "photoOpen" : "http://ichorstudios.com/assets/img/ubropen.jpg",
+      "review" : "Where can I start, Jennifer and Sarah Joy from Ichor were great to work with from start to finish. They delivered our website as promised: the back end functionality worked well as we uploaded our menus same day we had a final product, the simple yet elegant design is exactly what we wanted and our customers responded by offering immediate feedback. We had a couple simple glitches that Ichor fixed immediately! I highly recommend anyone seeking to modify an existing website or starting from scratch - these ladies take their jobs seriously and will get it done as promised! They are creative, fun to work with but most of all delivered what was discussed. While we only accomplished stage 1 of 3, I think it's important to note that Ichor did not overpromise their product and is allowing our business to see immediate results at a very fair price, allowing us to grow our website as our business grows. I look forward to our continued business relationship. Thank you Ichor!!! -John Kendall.",
+      "url" : "http://www.uptownbarrelroom.com/"
+    },
+    "1" : {
+      "client" : "Uptown Barrel Rooommmmm",
+      "description" : "We're very excited to currently be working on a website for Uptown Barrel Room. We have completed stage one! Check back soon for the stage two finished product.",
+      "photo" : "http://ichorstudios.com/assets/img/ubr.jpg",
+      "photoOpen" : "http://ichorstudios.com/assets/img/ubropen.jpg",
+      "review" : "Where can I start, Jennifer and Sarah Joy from Ichor were great to work with from start to finish. They delivered our website as promised: the back end functionality worked well as we uploaded our menus same day we had a final product, the simple yet elegant design is exactly what we wanted and our customers responded by offering immediate feedback. We had a couple simple glitches that Ichor fixed immediately! I highly recommend anyone seeking to modify an existing website or starting from scratch - these ladies take their jobs seriously and will get it done as promised! They are creative, fun to work with but most of all delivered what was discussed. While we only accomplished stage 1 of 3, I think it's important to note that Ichor did not overpromise their product and is allowing our business to see immediate results at a very fair price, allowing us to grow our website as our business grows. I look forward to our continued business relationship. Thank you Ichor!!! -John Kendall.",
+      "url" : "http://www.uptownbarrelroom.com/"
+    },
+    "-KgpWOvNprZjB6RBbKgv" : {
+      "client" : "Salon Bella La Vie",
+      "description" : "Salon Belle La Vie hired us after admiring our work on our other websites. We designed and developed the entire website from scratch. It went seamlessly and we gave the client a beautiful site that reflected the aesthetic of the salon.",
+      "photo" : "http://ichorstudios.com/assets/img/salon.JPG",
+      "photoOpen" : "http://ichorstudios.com/assets/img/salonExpand.JPG",
+      "review" : "Stuff",
+      "url" : ""
+    },
+    "2" : {
+      "client" : "Salon Bella La Vie",
+      "description" : "Salon Belle La Vie hired us after admiring our work on our other websites. We designed and developed the entire website from scratch. It went seamlessly and we gave the client a beautiful site that reflected the aesthetic of the salon.",
+      "photo" : "http://ichorstudios.com/assets/img/salon.JPG",
+      "photoOpen" : "http://ichorstudios.com/assets/img/salonExpand.JPG",
+      "review" : "Stuff",
+      "url" : ""
+    },
+    "3" : {
+      "client" : "Salon Bella La Vie",
+      "description" : "Salon Belle La Vie hired us after admiring our work on our other websites. We designed and developed the entire website from scratch. It went seamlessly and we gave the client a beautiful site that reflected the aesthetic of the salon.",
+      "photo" : "http://ichorstudios.com/assets/img/salon.JPG",
+      "photoOpen" : "http://ichorstudios.com/assets/img/salonExpand.JPG",
+      "review" : "Stuff",
+      "url" : ""
+    },
+    "4" : {
+      "client" : "Salon Bella La Vie",
+      "description" : "Salon Belle La Vie hired us after admiring our work on our other websites. We designed and developed the entire website from scratch. It went seamlessly and we gave the client a beautiful site that reflected the aesthetic of the salon.",
+      "photo" : "http://ichorstudios.com/assets/img/salon.JPG",
+      "photoOpen" : "http://ichorstudios.com/assets/img/salonExpand.JPG",
+      "review" : "Stuff",
+      "url" : ""
+    },
+    "5" : {
+      "client" : "Salon Bella La Vie",
+      "description" : "Salon Belle La Vie hired us after admiring our work on our other websites. We designed and developed the entire website from scratch. It went seamlessly and we gave the client a beautiful site that reflected the aesthetic of the salon.",
+      "photo" : "http://ichorstudios.com/assets/img/salon.JPG",
+      "photoOpen" : "http://ichorstudios.com/assets/img/salonExpand.JPG",
+      "review" : "Stuff",
+      "url" : ""
+    },
+    "6" : {
+      "client" : "Salon Bella La Vie",
+      "description" : "Salon Belle La Vie hired us after admiring our work on our other websites. We designed and developed the entire website from scratch. It went seamlessly and we gave the client a beautiful site that reflected the aesthetic of the salon.",
+      "photo" : "http://ichorstudios.com/assets/img/salon.JPG",
+      "photoOpen" : "http://ichorstudios.com/assets/img/salonExpand.JPG",
+      "review" : "Stuff",
+      "url" : ""
+    },
+    "7" : {
+      "client" : "Salon Bella La Vie",
+      "description" : "Salon Belle La Vie hired us after admiring our work on our other websites. We designed and developed the entire website from scratch. It went seamlessly and we gave the client a beautiful site that reflected the aesthetic of the salon.",
+      "photo" : "http://ichorstudios.com/assets/img/salon.JPG",
+      "photoOpen" : "http://ichorstudios.com/assets/img/salonExpand.JPG",
+      "review" : "Stuff",
+      "url" : ""
+    },
+    "8" : {
+      "client" : "Salon Bella La Vie",
+      "description" : "Salon Belle La Vie hired us after admiring our work on our other websites. We designed and developed the entire website from scratch. It went seamlessly and we gave the client a beautiful site that reflected the aesthetic of the salon.",
+      "photo" : "http://ichorstudios.com/assets/img/salon.JPG",
+      "photoOpen" : "http://ichorstudios.com/assets/img/salonExpand.JPG",
+      "review" : "Stuff",
+      "url" : ""
+    },
+    "9" : {
+      "client" : "Salon Bella La Vie",
+      "description" : "Salon Belle La Vie hired us after admiring our work on our other websites. We designed and developed the entire website from scratch. It went seamlessly and we gave the client a beautiful site that reflected the aesthetic of the salon.",
+      "photo" : "http://ichorstudios.com/assets/img/salon.JPG",
+      "photoOpen" : "http://ichorstudios.com/assets/img/salonExpand.JPG",
+      "review" : "Stuff",
+      "url" : ""
+    },
+    "10" : {
+      "client" : "Salon Bella La Vie",
+      "description" : "Salon Belle La Vie hired us after admiring our work on our other websites. We designed and developed the entire website from scratch. It went seamlessly and we gave the client a beautiful site that reflected the aesthetic of the salon.",
+      "photo" : "http://ichorstudios.com/assets/img/salon.JPG",
+      "photoOpen" : "http://ichorstudios.com/assets/img/salonExpand.JPG",
+      "review" : "Stuff",
+      "url" : ""
+    },
+    "-Kgzgl0q4kgx8nxCVbSF" : {
+      "client" : "Another one",
+      "description" : "",
+      "photo" : "http://ichorstudios.com/assets/img/flcExpand.jpg",
+      "photoOpen" : "http://ichorstudios.com/assets/img/flcExpand.jpg",
+      "review" : "Review stuff",
+      "url" : ""
+    },
+    "-KgzhDl8wXFJopF1qn_e" : {
+      "client" : "CLient22",
+      "description" : "",
+      "photo" : "https://firebasestorage.googleapis.com/v0/b/ichor-dea55.appspot.com/o/kzc9h88nwpm-dominik-wycislo.jpg?alt=media&token=161a0abc-e558-47df-95b2-9f5a6d75be73",
+      "review" : "Review",
+      "url" : ""
+    }
+  }
+}

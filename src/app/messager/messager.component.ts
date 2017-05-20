@@ -12,26 +12,30 @@ import 'rxjs/add/operator/map';
   styleUrls: ['./messager.component.css']
 })
 export class MessagerComponent {
+  constructor(private http: Http) {
+  }
 
-  constructor(private http: Http) { }
-
-
-  submit(name: string, company: string, phone: string, email: string, referal: string, message: string) {
+  submit(name: string, company: string, phone: string, email: string, referal: string, message: string, budget: string) {
     let headers = new Headers({ 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': true });
     let options = new RequestOptions({ headers: headers });
-    let url = "http://localhost:3000/mailgun"
+    let url = "https://ichor-mail.herokuapp.com/mailgun"
     let body = {
                   "name": btoa(name),
+                  "company": btoa(company),
                   "email": btoa(email),
+                  "phone": btoa(phone),
                   "message": btoa(message),
+                  "budget": btoa(budget),
+                  "referal": btoa(referal),
                   "key": btoa(mailChimp.serverKey),
                   "password": btoa(mailChimp.serverPassword)
                 }
-    this.http.post(url, body, options).subscribe(response => console.log(this.extractData(response)))
+    this.http.post(url, body, options).catch(this.handleError).subscribe(response => console.log(this.extractData(response)))
   }
 
   private extractData(res: Response) {
     let body = res.json();
+    document.getElementById('messager').innerHTML = "<h2 class='flash-message'>Your message has been sent</h2>";
     return  body.data || { };
   }
 
@@ -45,6 +49,7 @@ export class MessagerComponent {
     } else {
       errMsg = error.message ? error.message : error.toString();
     }
+    document.getElementById('messager').innerHTML = "<h2 class='flash-message'>There was an error sending your message</h2>";
     console.error(errMsg);
     return Observable.throw(errMsg);
   }
